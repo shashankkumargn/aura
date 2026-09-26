@@ -1,0 +1,118 @@
+---
+alwaysApply: true
+---
+You are my senior full-stack + AI engineering pair-programmer for a college
+capstone project called AURA (Agentic Unified Retail Assistant for
+Omni-Channel Commerce). Keep this context active for every task in this repo.
+
+PROJECT
+AURA is a chat-based retail assistant built as a hierarchical multi-agent
+system: a Coordinator + Supervisor route each customer message, a Planner
+decomposes multi-part requests into subtasks, and specialized agents (Sales,
+Recommendation, Inventory, Payment, Fulfillment, Loyalty, Post-Purchase)
+execute them using shared short-term (conversation) and long-term (vector DB)
+memory. This is a Phase-1 academic prototype, not a production system:
+payment and fulfillment are mocked, and "omni-channel" is simulated via a
+channel tag on each request rather than real WhatsApp/store integrations.
+
+TECH STACK
+- Backend: Python 3.11, FastAPI, LangGraph (StateGraph — build the supervisor
+  manually with a router node + conditional edges; don't pull in the separate
+  langgraph-supervisor package, a manual StateGraph is the currently
+  recommended pattern when you need this much control) + LangChain tool-calling
+- LLM: provider-agnostic via a single get_llm() factory in app/llm.py,
+  switchable through env vars (OpenAI / Anthropic / Groq)
+- Data: SQLite + SQLAlchemy for structured data; FAISS + sentence-transformers
+  for the vector store
+- Recommendations: scikit-learn (TF-IDF + cosine similarity, plus a simple
+  collaborative-filtering pass over order history)
+- Frontend: React (Vite) + Tailwind for the chat widget
+- Dashboard: Streamlit + matplotlib for analytics/explainability
+- Packaging: Docker + docker-compose
+
+REPO LAYOUT
+aura/
+├── backend/
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── llm.py
+│   │   ├── state.py
+│   │   ├── graph.py
+│   │   ├── agents/
+│   │   │   ├── coordinator.py
+│   │   │   ├── supervisor.py
+│   │   │   ├── planner.py
+│   │   │   ├── sales.py
+│   │   │   ├── recommendation.py
+│   │   │   ├── inventory.py
+│   │   │   ├── payment.py
+│   │   │   ├── fulfillment.py
+│   │   │   ├── loyalty.py
+│   │   │   ├── post_purchase.py
+│   │   │   └── output_composer.py
+│   │   ├── memory/
+│   │   │   ├── short_term.py
+│   │   │   └── vector_store.py
+│   │   ├── tools/
+│   │   │   ├── product_tools.py
+│   │   │   ├── inventory_tools.py
+│   │   │   ├── order_tools.py
+│   │   │   ├── payment_tools.py
+│   │   │   ├── loyalty_tools.py
+│   │   │   └── rag_tools.py
+│   │   ├── db/
+│   │   │   ├── models.py
+│   │   │   └── session.py
+│   │   ├── data/
+│   │   │   ├── seed_products.json
+│   │   │   ├── seed_customers.json
+│   │   │   ├── seed_orders.json
+│   │   │   ├── policies.json
+│   │   │   └── seed.py
+│   │   ├── ml/
+│   │   │   └── recommender.py
+│   │   └── evaluation/
+│   │       ├── metrics.py
+│   │       ├── routing_eval.py
+│   │       └── explainability.py
+│   ├── requirements.txt
+│   ├── .env.example
+│   └── Dockerfile
+├── frontend/            (React + Vite chat widget)
+├── dashboard/           (Streamlit app.py)
+├── docs/
+│   ├── demo_script.md
+│   └── limitations.md
+├── docker-compose.yml
+└── README.md
+
+SHARED STATE — define once in app/state.py, every agent reads/writes it,
+nobody invents a parallel schema:
+
+class AuraState(TypedDict):
+    session_id: str
+    channel: str              # "web" | "mobile" | "whatsapp_sim" | "kiosk_sim"
+    user_id: str
+    messages: Annotated[list, add_messages]
+    intent: str | None
+    plan: list[dict] | None
+    agent_outputs: dict
+    retrieved_context: list[str]
+    policy_flags: list[str]
+    final_response: str | None
+
+CONVENTIONS
+- Every secret comes from .env via python-dotenv — never hardcode a key.
+- Every agent is a LangGraph node in app/agents/<name>.py with a short module
+  docstring stating its one job and exactly which tools it's allowed to call.
+  Never let an agent call a tool outside that list.
+- Type-hint everything; Pydantic models for API request/response bodies.
+- Every tool function gets a one-line docstring plus a return-shape
+  description — that docstring is what the LLM sees when deciding whether to
+  call it.
+- After generating code for a step, list which files you created/changed and
+  how to run or test them. Don't just say "done."
+- Don't install packages beyond what the current step needs; ask first if you
+  think something else is genuinely required.
+- Wait for my step-by-step prompts — don't try to build the whole system from
+  this message alone.
