@@ -1,0 +1,482 @@
+[
+  {
+    "id": "u123",
+    "name": "Alex Sharma",
+    "email": "alex.sharma@example.com",
+    "loyalty_points": 450,
+    "loyalty_tier": "Gold",
+    "channel_preference": "web"
+  },
+  {
+    "id": "user1",
+    "name": "Sam Patel",
+    "email": "sam.patel@example.com",
+    "loyalty_points": 180,
+    "loyalty_tier": "Silver",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-003",
+    "name": "Karthik Patel",
+    "email": "karthik.patel3@example.com",
+    "loyalty_points": 165,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-004",
+    "name": "Varun Deshmukh",
+    "email": "varun.deshmukh4@example.com",
+    "loyalty_points": 443,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-005",
+    "name": "Karthik Kulkarni",
+    "email": "karthik.kulkarni5@example.com",
+    "loyalty_points": 2878,
+    "loyalty_tier": "Gold",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-006",
+    "name": "Sneha Bhat",
+    "email": "sneha.bhat6@example.com",
+    "loyalty_points": 908,
+    "loyalty_tier": "Silver",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-007",
+    "name": "Aditi Gupta",
+    "email": "aditi.gupta7@example.com",
+    "loyalty_points": 444,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-008",
+    "name": "Vikram Bhat",
+    "email": "vikram.bhat8@example.com",
+    "loyalty_points": 625,
+    "loyalty_tier": "Silver",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-009",
+    "name": "Isha Nair",
+    "email": "isha.nair9@example.com",
+    "loyalty_points": 412,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-010",
+    "name": "Vikram Kulkarni",
+    "email": "vikram.kulkarni10@example.com",
+    "loyalty_points": 2012,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-011",
+    "name": "Rahul Patel",
+    "email": "rahul.patel11@example.com",
+    "loyalty_points": 240,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-012",
+    "name": "Sneha Sharma",
+    "email": "sneha.sharma12@example.com",
+    "loyalty_points": 2426,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-013",
+    "name": "Rohan Joshi",
+    "email": "rohan.joshi13@example.com",
+    "loyalty_points": 1019,
+    "loyalty_tier": "Silver",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-014",
+    "name": "Pooja Sharma",
+    "email": "pooja.sharma14@example.com",
+    "loyalty_points": 274,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-015",
+    "name": "Amit Kulkarni",
+    "email": "amit.kulkarni15@example.com",
+    "loyalty_points": 91,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-016",
+    "name": "Aditi Nair",
+    "email": "aditi.nair16@example.com",
+    "loyalty_points": 376,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-017",
+    "name": "Varun Deshmukh",
+    "email": "varun.deshmukh17@example.com",
+    "loyalty_points": 339,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-018",
+    "name": "Arjun Iyer",
+    "email": "arjun.iyer18@example.com",
+    "loyalty_points": 1285,
+    "loyalty_tier": "Silver",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-019",
+    "name": "Ananya Reddy",
+    "email": "ananya.reddy19@example.com",
+    "loyalty_points": 177,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-020",
+    "name": "Kabir Joshi",
+    "email": "kabir.joshi20@example.com",
+    "loyalty_points": 720,
+    "loyalty_tier": "Silver",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-021",
+    "name": "Kabir Bhat",
+    "email": "kabir.bhat21@example.com",
+    "loyalty_points": 962,
+    "loyalty_tier": "Silver",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-022",
+    "name": "Pooja Verma",
+    "email": "pooja.verma22@example.com",
+    "loyalty_points": 224,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-023",
+    "name": "Tanvi Verma",
+    "email": "tanvi.verma23@example.com",
+    "loyalty_points": 3109,
+    "loyalty_tier": "Gold",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-024",
+    "name": "Kabir Patel",
+    "email": "kabir.patel24@example.com",
+    "loyalty_points": 2592,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-025",
+    "name": "Rohan Reddy",
+    "email": "rohan.reddy25@example.com",
+    "loyalty_points": 395,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-026",
+    "name": "Arjun Bhat",
+    "email": "arjun.bhat26@example.com",
+    "loyalty_points": 1548,
+    "loyalty_tier": "Gold",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-027",
+    "name": "Karthik Gupta",
+    "email": "karthik.gupta27@example.com",
+    "loyalty_points": 259,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-028",
+    "name": "Rahul Verma",
+    "email": "rahul.verma28@example.com",
+    "loyalty_points": 416,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-029",
+    "name": "Neha Gupta",
+    "email": "neha.gupta29@example.com",
+    "loyalty_points": 284,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-030",
+    "name": "Arjun Gupta",
+    "email": "arjun.gupta30@example.com",
+    "loyalty_points": 1629,
+    "loyalty_tier": "Gold",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-031",
+    "name": "Isha Iyer",
+    "email": "isha.iyer31@example.com",
+    "loyalty_points": 1746,
+    "loyalty_tier": "Gold",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-032",
+    "name": "Varun Bhat",
+    "email": "varun.bhat32@example.com",
+    "loyalty_points": 1269,
+    "loyalty_tier": "Silver",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-033",
+    "name": "Aditi Deshmukh",
+    "email": "aditi.deshmukh33@example.com",
+    "loyalty_points": 142,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-034",
+    "name": "Karthik Deshmukh",
+    "email": "karthik.deshmukh34@example.com",
+    "loyalty_points": 217,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-035",
+    "name": "Sneha Chopra",
+    "email": "sneha.chopra35@example.com",
+    "loyalty_points": 3076,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-036",
+    "name": "Meera Gupta",
+    "email": "meera.gupta36@example.com",
+    "loyalty_points": 2311,
+    "loyalty_tier": "Gold",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-037",
+    "name": "Isha Nair",
+    "email": "isha.nair37@example.com",
+    "loyalty_points": 1858,
+    "loyalty_tier": "Gold",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-038",
+    "name": "Tanvi Patel",
+    "email": "tanvi.patel38@example.com",
+    "loyalty_points": 1359,
+    "loyalty_tier": "Silver",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-039",
+    "name": "Karthik Kulkarni",
+    "email": "karthik.kulkarni39@example.com",
+    "loyalty_points": 2662,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-040",
+    "name": "Karthik Bhat",
+    "email": "karthik.bhat40@example.com",
+    "loyalty_points": 973,
+    "loyalty_tier": "Silver",
+    "channel_preference": "kiosk_sim"
+  },
+  {
+    "id": "CUST-041",
+    "name": "Meera Iyer",
+    "email": "meera.iyer41@example.com",
+    "loyalty_points": 130,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-042",
+    "name": "Suresh Deshmukh",
+    "email": "suresh.deshmukh42@example.com",
+    "loyalty_points": 292,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-043",
+    "name": "Meera Patel",
+    "email": "meera.patel43@example.com",
+    "loyalty_points": 349,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-044",
+    "name": "Kabir Reddy",
+    "email": "kabir.reddy44@example.com",
+    "loyalty_points": 919,
+    "loyalty_tier": "Silver",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-045",
+    "name": "Amit Bhat",
+    "email": "amit.bhat45@example.com",
+    "loyalty_points": 417,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-046",
+    "name": "Karthik Nair",
+    "email": "karthik.nair46@example.com",
+    "loyalty_points": 323,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-047",
+    "name": "Vikram Iyer",
+    "email": "vikram.iyer47@example.com",
+    "loyalty_points": 253,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-048",
+    "name": "Sneha Joshi",
+    "email": "sneha.joshi48@example.com",
+    "loyalty_points": 274,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-049",
+    "name": "Rohan Patel",
+    "email": "rohan.patel49@example.com",
+    "loyalty_points": 176,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-050",
+    "name": "Pooja Deshmukh",
+    "email": "pooja.deshmukh50@example.com",
+    "loyalty_points": 1112,
+    "loyalty_tier": "Silver",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-051",
+    "name": "Aarav Kulkarni",
+    "email": "aarav.kulkarni51@example.com",
+    "loyalty_points": 283,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-052",
+    "name": "Divya Chopra",
+    "email": "divya.chopra52@example.com",
+    "loyalty_points": 279,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-053",
+    "name": "Pooja Bhat",
+    "email": "pooja.bhat53@example.com",
+    "loyalty_points": 3059,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-054",
+    "name": "Aditi Iyer",
+    "email": "aditi.iyer54@example.com",
+    "loyalty_points": 1580,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-055",
+    "name": "Meera Deshmukh",
+    "email": "meera.deshmukh55@example.com",
+    "loyalty_points": 95,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "web"
+  },
+  {
+    "id": "CUST-056",
+    "name": "Rohan Iyer",
+    "email": "rohan.iyer56@example.com",
+    "loyalty_points": 98,
+    "loyalty_tier": "Bronze",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-057",
+    "name": "Ananya Verma",
+    "email": "ananya.verma57@example.com",
+    "loyalty_points": 3163,
+    "loyalty_tier": "Gold",
+    "channel_preference": "whatsapp_sim"
+  },
+  {
+    "id": "CUST-058",
+    "name": "Varun Nair",
+    "email": "varun.nair58@example.com",
+    "loyalty_points": 747,
+    "loyalty_tier": "Silver",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-059",
+    "name": "Sneha Nair",
+    "email": "sneha.nair59@example.com",
+    "loyalty_points": 915,
+    "loyalty_tier": "Silver",
+    "channel_preference": "mobile"
+  },
+  {
+    "id": "CUST-060",
+    "name": "Meera Gupta",
+    "email": "meera.gupta60@example.com",
+    "loyalty_points": 2142,
+    "loyalty_tier": "Gold",
+    "channel_preference": "mobile"
+  }
+]

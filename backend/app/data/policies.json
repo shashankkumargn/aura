@@ -1,0 +1,50 @@
+[
+  {
+    "id": "POL-01",
+    "title": "Return and Replacement Policy",
+    "category": "returns",
+    "text": "AURA offers a 14-day hassle-free return window for all products from the delivery date. Items must be in original condition with intact packaging and tags. Electronics must include all power adapters, warranty cards, and accessories. Once requested, a free courier pickup is scheduled within 48 hours. Refunds are credited to the original payment method within 5-7 business days post quality inspection."
+  },
+  {
+    "id": "POL-02",
+    "title": "Order Cancellation Policy",
+    "category": "cancellation",
+    "text": "Orders can be cancelled free of charge at any time prior to warehouse dispatch. Once the parcel is in transit, cancellation cannot be processed directly; customers may refuse the shipment at the doorstep upon arrival. Pre-paid cancellations are immediately refunded to the store wallet or 3 business days to card/UPI."
+  },
+  {
+    "id": "POL-03",
+    "title": "Standard and Express Shipping",
+    "category": "shipping",
+    "text": "Standard shipping is complimentary for orders over ₹999; otherwise, a flat fee of ₹49 applies. Delivery arrives in 2-4 business days for metropolitan PIN codes and 4-6 business days for regional zones. Next-day Express Delivery is available in select tier-1 cities for a ₹99 surcharge on orders placed before 2:00 PM."
+  },
+  {
+    "id": "POL-04",
+    "title": "Manufacturer Warranty and Repairs",
+    "category": "warranty",
+    "text": "All consumer electronics, computer peripherals, and appliances sold on AURA come with a 1-year to 2-year manufacturer warranty. The warranty covers manufacturing defects, hardware malfunctions, and component failures. Accidental liquid spills, physical drops, and unauthorized third-party repairs void warranty coverage."
+  },
+  {
+    "id": "POL-05",
+    "title": "AURA Rewards Loyalty Program",
+    "category": "loyalty",
+    "text": "Customers earn 1 AURA Point for every ₹10 spent. Tiers include Bronze (0-499 pts), Silver (500-1499 pts), and Gold (1500+ pts). Points can be redeemed at ₹0.50 per point towards any checkout order (up to 50% of the basket subtotal). Gold members receive free express shipping, priority customer concierge, and early access to festive sales."
+  },
+  {
+    "id": "POL-06",
+    "title": "Payment Gateways and Security",
+    "category": "payments",
+    "text": "AURA supports UPI (Google Pay, PhonePe, Paytm), Credit/Debit cards (Visa, MasterCard, RuPay), Net Banking, and Cash on Delivery (COD up to ₹5,000). All online transactions are 256-bit SSL encrypted. For simulated orders in Phase-1, checkout links simulate instant tokenized authorizations."
+  },
+  {
+    "id": "POL-07",
+    "title": "In-Store Kiosk and Click-and-Collect",
+    "category": "omnichannel",
+    "text": "Orders initiated via AURA in-store smart kiosks can be reserved for instant counter pickup or scheduled for doorstep dispatch. Customers can view real-time aisle stock availability directly on the kiosk screen."
+  },
+  {
+    "id": "POL-08",
+    "title": "Customer Privacy and Data Protection",
+    "category": "privacy",
+    "text": "AURA collects only essential delivery and profile data required to fulfill orders and tailor recommendations. Customer phone numbers, addresses, and transaction histories are never sold to external third parties. Customers may request complete account data deletion at any time."
+  }
+]

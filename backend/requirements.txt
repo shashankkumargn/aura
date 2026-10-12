@@ -1,0 +1,24 @@
+# AURA Backend Dependencies
+fastapi
+uvicorn[standard]
+python-dotenv
+pydantic
+
+# Database
+sqlalchemy
+
+# LangChain + LangGraph orchestration
+langchain-core
+langgraph
+
+# LLM provider integrations (install the one you use)
+langchain-groq
+langchain-openai
+langchain-anthropic
+
+# Streamlit dashboard (run separately)
+streamlit
+matplotlib
+
+# Evaluation
+pandas

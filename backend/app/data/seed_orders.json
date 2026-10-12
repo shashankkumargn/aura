@@ -1,0 +1,4064 @@
+[
+  {
+    "id": "ORD-1001",
+    "customer_id": "u123",
+    "status": "shipped",
+    "channel": "web",
+    "placed_at": "2026-10-10T15:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "in_transit",
+    "items": [
+      {
+        "order_id": "ORD-1001",
+        "product_id": "P001",
+        "qty": 1,
+        "unit_price": 1049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1002",
+    "customer_id": "u123",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-10-06T15:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1002",
+        "product_id": "P002",
+        "qty": 1,
+        "unit_price": 1149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1003",
+    "customer_id": "CUST-008",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-22T01:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1003",
+        "product_id": "P077",
+        "qty": 1,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1004",
+    "customer_id": "CUST-006",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-04T09:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1004",
+        "product_id": "P001",
+        "qty": 1,
+        "unit_price": 1049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1005",
+    "customer_id": "CUST-051",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-06T13:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1005",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1006",
+    "customer_id": "CUST-044",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-25T18:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1006",
+        "product_id": "P064",
+        "qty": 2,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1006",
+        "product_id": "P041",
+        "qty": 2,
+        "unit_price": 1549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1007",
+    "customer_id": "CUST-031",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-26T18:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1007",
+        "product_id": "P023",
+        "qty": 2,
+        "unit_price": 1949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1008",
+    "customer_id": "CUST-049",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-21T05:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1008",
+        "product_id": "P018",
+        "qty": 1,
+        "unit_price": 2549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1009",
+    "customer_id": "CUST-018",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-10-02T22:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1009",
+        "product_id": "P042",
+        "qty": 1,
+        "unit_price": 899.0
+      },
+      {
+        "order_id": "ORD-1009",
+        "product_id": "P048",
+        "qty": 2,
+        "unit_price": 699.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1010",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-19T08:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1010",
+        "product_id": "P056",
+        "qty": 2,
+        "unit_price": 1749.0
+      },
+      {
+        "order_id": "ORD-1010",
+        "product_id": "P019",
+        "qty": 2,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1011",
+    "customer_id": "CUST-048",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-04T06:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1011",
+        "product_id": "P033",
+        "qty": 1,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1012",
+    "customer_id": "CUST-005",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-28T20:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1012",
+        "product_id": "P068",
+        "qty": 1,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1012",
+        "product_id": "P060",
+        "qty": 2,
+        "unit_price": 1649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1013",
+    "customer_id": "CUST-021",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-10-02T18:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1013",
+        "product_id": "P067",
+        "qty": 1,
+        "unit_price": 1099.0
+      },
+      {
+        "order_id": "ORD-1013",
+        "product_id": "P056",
+        "qty": 1,
+        "unit_price": 1749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1014",
+    "customer_id": "CUST-030",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-09T13:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1014",
+        "product_id": "P023",
+        "qty": 1,
+        "unit_price": 1949.0
+      },
+      {
+        "order_id": "ORD-1014",
+        "product_id": "P051",
+        "qty": 1,
+        "unit_price": 1649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1015",
+    "customer_id": "CUST-021",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-26T03:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1015",
+        "product_id": "P021",
+        "qty": 2,
+        "unit_price": 2149.0
+      },
+      {
+        "order_id": "ORD-1015",
+        "product_id": "P059",
+        "qty": 1,
+        "unit_price": 1399.0
+      },
+      {
+        "order_id": "ORD-1015",
+        "product_id": "P077",
+        "qty": 2,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1016",
+    "customer_id": "CUST-013",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-29T17:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1016",
+        "product_id": "P042",
+        "qty": 2,
+        "unit_price": 899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1017",
+    "customer_id": "CUST-039",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-11T11:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1017",
+        "product_id": "P064",
+        "qty": 2,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1017",
+        "product_id": "P022",
+        "qty": 2,
+        "unit_price": 2249.0
+      },
+      {
+        "order_id": "ORD-1017",
+        "product_id": "P037",
+        "qty": 2,
+        "unit_price": 3149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1018",
+    "customer_id": "CUST-047",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-31T14:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1018",
+        "product_id": "P072",
+        "qty": 1,
+        "unit_price": 1599.0
+      },
+      {
+        "order_id": "ORD-1018",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1019",
+    "customer_id": "user1",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-21T21:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1019",
+        "product_id": "P006",
+        "qty": 1,
+        "unit_price": 1799.0
+      },
+      {
+        "order_id": "ORD-1019",
+        "product_id": "P037",
+        "qty": 2,
+        "unit_price": 3149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1020",
+    "customer_id": "CUST-032",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-27T22:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1020",
+        "product_id": "P045",
+        "qty": 1,
+        "unit_price": 2699.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1021",
+    "customer_id": "CUST-048",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-22T06:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1021",
+        "product_id": "P037",
+        "qty": 2,
+        "unit_price": 3149.0
+      },
+      {
+        "order_id": "ORD-1021",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1022",
+    "customer_id": "CUST-050",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-24T10:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1022",
+        "product_id": "P077",
+        "qty": 1,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1023",
+    "customer_id": "CUST-035",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-23T12:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1023",
+        "product_id": "P006",
+        "qty": 1,
+        "unit_price": 1799.0
+      },
+      {
+        "order_id": "ORD-1023",
+        "product_id": "P018",
+        "qty": 1,
+        "unit_price": 2549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1024",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-07T02:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1024",
+        "product_id": "P057",
+        "qty": 1,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1025",
+    "customer_id": "CUST-027",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-21T06:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1025",
+        "product_id": "P077",
+        "qty": 2,
+        "unit_price": 1349.0
+      },
+      {
+        "order_id": "ORD-1025",
+        "product_id": "P008",
+        "qty": 1,
+        "unit_price": 449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1026",
+    "customer_id": "CUST-018",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-09T22:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1026",
+        "product_id": "P061",
+        "qty": 1,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1027",
+    "customer_id": "CUST-007",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-31T11:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1027",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      },
+      {
+        "order_id": "ORD-1027",
+        "product_id": "P018",
+        "qty": 1,
+        "unit_price": 2549.0
+      },
+      {
+        "order_id": "ORD-1027",
+        "product_id": "P056",
+        "qty": 1,
+        "unit_price": 1749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1028",
+    "customer_id": "CUST-056",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-15T16:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1028",
+        "product_id": "P020",
+        "qty": 2,
+        "unit_price": 1899.0
+      },
+      {
+        "order_id": "ORD-1028",
+        "product_id": "P081",
+        "qty": 1,
+        "unit_price": 4399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1029",
+    "customer_id": "CUST-020",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-20T14:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1029",
+        "product_id": "P039",
+        "qty": 2,
+        "unit_price": 1549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1030",
+    "customer_id": "CUST-060",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-18T00:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1030",
+        "product_id": "P046",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1031",
+    "customer_id": "CUST-010",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-15T05:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1031",
+        "product_id": "P027",
+        "qty": 1,
+        "unit_price": 7599.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1032",
+    "customer_id": "CUST-020",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-09T00:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1032",
+        "product_id": "P052",
+        "qty": 1,
+        "unit_price": 2749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1033",
+    "customer_id": "CUST-059",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-25T18:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1033",
+        "product_id": "P037",
+        "qty": 1,
+        "unit_price": 3149.0
+      },
+      {
+        "order_id": "ORD-1033",
+        "product_id": "P050",
+        "qty": 2,
+        "unit_price": 2399.0
+      },
+      {
+        "order_id": "ORD-1033",
+        "product_id": "P031",
+        "qty": 2,
+        "unit_price": 1649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1034",
+    "customer_id": "CUST-004",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-16T13:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1034",
+        "product_id": "P054",
+        "qty": 1,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1035",
+    "customer_id": "CUST-017",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-22T06:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1035",
+        "product_id": "P050",
+        "qty": 1,
+        "unit_price": 2399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1036",
+    "customer_id": "CUST-005",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-04T02:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1036",
+        "product_id": "P063",
+        "qty": 2,
+        "unit_price": 1249.0
+      },
+      {
+        "order_id": "ORD-1036",
+        "product_id": "P057",
+        "qty": 1,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1037",
+    "customer_id": "CUST-042",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-09T03:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1037",
+        "product_id": "P073",
+        "qty": 1,
+        "unit_price": 849.0
+      },
+      {
+        "order_id": "ORD-1037",
+        "product_id": "P045",
+        "qty": 1,
+        "unit_price": 2699.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1038",
+    "customer_id": "CUST-042",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-13T03:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1038",
+        "product_id": "P019",
+        "qty": 2,
+        "unit_price": 2499.0
+      },
+      {
+        "order_id": "ORD-1038",
+        "product_id": "P079",
+        "qty": 2,
+        "unit_price": 6899.0
+      },
+      {
+        "order_id": "ORD-1038",
+        "product_id": "P034",
+        "qty": 1,
+        "unit_price": 2449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1039",
+    "customer_id": "CUST-042",
+    "status": "placed",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-10-11T03:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1039",
+        "product_id": "P009",
+        "qty": 1,
+        "unit_price": 499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1040",
+    "customer_id": "CUST-046",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-17T05:21:31.740909",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1040",
+        "product_id": "P039",
+        "qty": 1,
+        "unit_price": 1549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1041",
+    "customer_id": "u123",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-10-04T18:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1041",
+        "product_id": "P010",
+        "qty": 2,
+        "unit_price": 7849.0
+      },
+      {
+        "order_id": "ORD-1041",
+        "product_id": "P066",
+        "qty": 2,
+        "unit_price": 949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1042",
+    "customer_id": "CUST-055",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-21T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1042",
+        "product_id": "P024",
+        "qty": 1,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1043",
+    "customer_id": "CUST-028",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-17T02:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1043",
+        "product_id": "P048",
+        "qty": 1,
+        "unit_price": 699.0
+      },
+      {
+        "order_id": "ORD-1043",
+        "product_id": "P034",
+        "qty": 2,
+        "unit_price": 2449.0
+      },
+      {
+        "order_id": "ORD-1043",
+        "product_id": "P033",
+        "qty": 2,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1044",
+    "customer_id": "CUST-026",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-18T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1044",
+        "product_id": "P063",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1045",
+    "customer_id": "CUST-037",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-21T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1045",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1046",
+    "customer_id": "CUST-026",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-25T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1046",
+        "product_id": "P076",
+        "qty": 2,
+        "unit_price": 999.0
+      },
+      {
+        "order_id": "ORD-1046",
+        "product_id": "P023",
+        "qty": 2,
+        "unit_price": 1949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1047",
+    "customer_id": "CUST-037",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-12T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1047",
+        "product_id": "P028",
+        "qty": 1,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1048",
+    "customer_id": "CUST-027",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-25T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1048",
+        "product_id": "P065",
+        "qty": 1,
+        "unit_price": 599.0
+      },
+      {
+        "order_id": "ORD-1048",
+        "product_id": "P003",
+        "qty": 1,
+        "unit_price": 1099.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1049",
+    "customer_id": "CUST-050",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-10-03T00:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1049",
+        "product_id": "P011",
+        "qty": 2,
+        "unit_price": 4249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1050",
+    "customer_id": "CUST-008",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-19T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1050",
+        "product_id": "P023",
+        "qty": 2,
+        "unit_price": 1949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1051",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-09T03:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1051",
+        "product_id": "P063",
+        "qty": 2,
+        "unit_price": 1249.0
+      },
+      {
+        "order_id": "ORD-1051",
+        "product_id": "P070",
+        "qty": 1,
+        "unit_price": 1899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1052",
+    "customer_id": "CUST-013",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-11T02:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1052",
+        "product_id": "P030",
+        "qty": 1,
+        "unit_price": 3649.0
+      },
+      {
+        "order_id": "ORD-1052",
+        "product_id": "P022",
+        "qty": 1,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1053",
+    "customer_id": "CUST-028",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-13T18:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1053",
+        "product_id": "P076",
+        "qty": 1,
+        "unit_price": 999.0
+      },
+      {
+        "order_id": "ORD-1053",
+        "product_id": "P074",
+        "qty": 2,
+        "unit_price": 949.0
+      },
+      {
+        "order_id": "ORD-1053",
+        "product_id": "P003",
+        "qty": 2,
+        "unit_price": 1099.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1054",
+    "customer_id": "CUST-057",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-13T04:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1054",
+        "product_id": "P023",
+        "qty": 2,
+        "unit_price": 1949.0
+      },
+      {
+        "order_id": "ORD-1054",
+        "product_id": "P081",
+        "qty": 2,
+        "unit_price": 4399.0
+      },
+      {
+        "order_id": "ORD-1054",
+        "product_id": "P015",
+        "qty": 1,
+        "unit_price": 2349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1055",
+    "customer_id": "CUST-041",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-30T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1055",
+        "product_id": "P078",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1056",
+    "customer_id": "CUST-011",
+    "status": "shipped",
+    "channel": "mobile",
+    "placed_at": "2026-10-09T13:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "shipped",
+    "items": [
+      {
+        "order_id": "ORD-1056",
+        "product_id": "P028",
+        "qty": 1,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1057",
+    "customer_id": "CUST-034",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-06T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1057",
+        "product_id": "P035",
+        "qty": 1,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1058",
+    "customer_id": "CUST-056",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-10-10T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1058",
+        "product_id": "P014",
+        "qty": 1,
+        "unit_price": 3399.0
+      },
+      {
+        "order_id": "ORD-1058",
+        "product_id": "P038",
+        "qty": 2,
+        "unit_price": 3199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1059",
+    "customer_id": "CUST-045",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-12T00:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1059",
+        "product_id": "P072",
+        "qty": 2,
+        "unit_price": 1599.0
+      },
+      {
+        "order_id": "ORD-1059",
+        "product_id": "P080",
+        "qty": 2,
+        "unit_price": 5149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1060",
+    "customer_id": "CUST-032",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-22T11:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1060",
+        "product_id": "P042",
+        "qty": 1,
+        "unit_price": 899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1061",
+    "customer_id": "CUST-057",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-10-02T04:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1061",
+        "product_id": "P025",
+        "qty": 2,
+        "unit_price": 5699.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1062",
+    "customer_id": "CUST-054",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-14T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1062",
+        "product_id": "P019",
+        "qty": 1,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1063",
+    "customer_id": "CUST-028",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-27T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1063",
+        "product_id": "P035",
+        "qty": 2,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1064",
+    "customer_id": "CUST-006",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-10-04T13:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1064",
+        "product_id": "P054",
+        "qty": 2,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1065",
+    "customer_id": "CUST-011",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-04T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1065",
+        "product_id": "P044",
+        "qty": 1,
+        "unit_price": 2649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1066",
+    "customer_id": "CUST-056",
+    "status": "placed",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-10-07T21:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1066",
+        "product_id": "P019",
+        "qty": 2,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1067",
+    "customer_id": "CUST-050",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-30T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1067",
+        "product_id": "P077",
+        "qty": 1,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1068",
+    "customer_id": "CUST-056",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-11T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1068",
+        "product_id": "P012",
+        "qty": 2,
+        "unit_price": 4849.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1069",
+    "customer_id": "CUST-025",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-16T22:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1069",
+        "product_id": "P071",
+        "qty": 2,
+        "unit_price": 1199.0
+      },
+      {
+        "order_id": "ORD-1069",
+        "product_id": "P064",
+        "qty": 2,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1069",
+        "product_id": "P013",
+        "qty": 1,
+        "unit_price": 3049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1070",
+    "customer_id": "CUST-042",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-08T02:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1070",
+        "product_id": "P001",
+        "qty": 1,
+        "unit_price": 1049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1071",
+    "customer_id": "CUST-019",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-01T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1071",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1072",
+    "customer_id": "CUST-028",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-10-06T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1072",
+        "product_id": "P078",
+        "qty": 1,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1073",
+    "customer_id": "CUST-041",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-29T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1073",
+        "product_id": "P012",
+        "qty": 1,
+        "unit_price": 4849.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1074",
+    "customer_id": "CUST-003",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-19T10:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1074",
+        "product_id": "P074",
+        "qty": 2,
+        "unit_price": 949.0
+      },
+      {
+        "order_id": "ORD-1074",
+        "product_id": "P001",
+        "qty": 2,
+        "unit_price": 1049.0
+      },
+      {
+        "order_id": "ORD-1074",
+        "product_id": "P078",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1075",
+    "customer_id": "CUST-031",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-01T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1075",
+        "product_id": "P040",
+        "qty": 2,
+        "unit_price": 899.0
+      },
+      {
+        "order_id": "ORD-1075",
+        "product_id": "P013",
+        "qty": 2,
+        "unit_price": 3049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1076",
+    "customer_id": "CUST-032",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-24T10:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1076",
+        "product_id": "P040",
+        "qty": 1,
+        "unit_price": 899.0
+      },
+      {
+        "order_id": "ORD-1076",
+        "product_id": "P074",
+        "qty": 1,
+        "unit_price": 949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1077",
+    "customer_id": "CUST-051",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-17T11:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1077",
+        "product_id": "P019",
+        "qty": 2,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1078",
+    "customer_id": "CUST-010",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-01T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1078",
+        "product_id": "P026",
+        "qty": 1,
+        "unit_price": 5549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1079",
+    "customer_id": "CUST-043",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-12T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1079",
+        "product_id": "P074",
+        "qty": 2,
+        "unit_price": 949.0
+      },
+      {
+        "order_id": "ORD-1079",
+        "product_id": "P008",
+        "qty": 2,
+        "unit_price": 449.0
+      },
+      {
+        "order_id": "ORD-1079",
+        "product_id": "P046",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1080",
+    "customer_id": "CUST-038",
+    "status": "placed",
+    "channel": "mobile",
+    "placed_at": "2026-10-10T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1080",
+        "product_id": "P034",
+        "qty": 2,
+        "unit_price": 2449.0
+      },
+      {
+        "order_id": "ORD-1080",
+        "product_id": "P046",
+        "qty": 1,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1081",
+    "customer_id": "CUST-020",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-16T11:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1081",
+        "product_id": "P008",
+        "qty": 2,
+        "unit_price": 449.0
+      },
+      {
+        "order_id": "ORD-1081",
+        "product_id": "P060",
+        "qty": 2,
+        "unit_price": 1649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1082",
+    "customer_id": "CUST-058",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-29T21:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1082",
+        "product_id": "P046",
+        "qty": 1,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1083",
+    "customer_id": "CUST-057",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-02T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1083",
+        "product_id": "P029",
+        "qty": 2,
+        "unit_price": 5199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1084",
+    "customer_id": "CUST-019",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-23T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1084",
+        "product_id": "P009",
+        "qty": 1,
+        "unit_price": 499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1085",
+    "customer_id": "CUST-053",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-03T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1085",
+        "product_id": "P053",
+        "qty": 2,
+        "unit_price": 2449.0
+      },
+      {
+        "order_id": "ORD-1085",
+        "product_id": "P051",
+        "qty": 1,
+        "unit_price": 1649.0
+      },
+      {
+        "order_id": "ORD-1085",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1086",
+    "customer_id": "CUST-057",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-20T07:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1086",
+        "product_id": "P005",
+        "qty": 1,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1087",
+    "customer_id": "CUST-015",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-14T00:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1087",
+        "product_id": "P073",
+        "qty": 1,
+        "unit_price": 849.0
+      },
+      {
+        "order_id": "ORD-1087",
+        "product_id": "P023",
+        "qty": 1,
+        "unit_price": 1949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1088",
+    "customer_id": "u123",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-03T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1088",
+        "product_id": "P038",
+        "qty": 2,
+        "unit_price": 3199.0
+      },
+      {
+        "order_id": "ORD-1088",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      },
+      {
+        "order_id": "ORD-1088",
+        "product_id": "P061",
+        "qty": 2,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1089",
+    "customer_id": "CUST-003",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-05T02:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1089",
+        "product_id": "P019",
+        "qty": 1,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1090",
+    "customer_id": "CUST-009",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-20T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1090",
+        "product_id": "P045",
+        "qty": 1,
+        "unit_price": 2699.0
+      },
+      {
+        "order_id": "ORD-1090",
+        "product_id": "P014",
+        "qty": 1,
+        "unit_price": 3399.0
+      },
+      {
+        "order_id": "ORD-1090",
+        "product_id": "P068",
+        "qty": 2,
+        "unit_price": 799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1091",
+    "customer_id": "CUST-052",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-20T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1091",
+        "product_id": "P006",
+        "qty": 1,
+        "unit_price": 1799.0
+      },
+      {
+        "order_id": "ORD-1091",
+        "product_id": "P052",
+        "qty": 1,
+        "unit_price": 2749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1092",
+    "customer_id": "CUST-044",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-13T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1092",
+        "product_id": "P051",
+        "qty": 2,
+        "unit_price": 1649.0
+      },
+      {
+        "order_id": "ORD-1092",
+        "product_id": "P078",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1093",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-14T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1093",
+        "product_id": "P023",
+        "qty": 1,
+        "unit_price": 1949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1094",
+    "customer_id": "CUST-005",
+    "status": "shipped",
+    "channel": "web",
+    "placed_at": "2026-10-07T09:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "shipped",
+    "items": [
+      {
+        "order_id": "ORD-1094",
+        "product_id": "P056",
+        "qty": 2,
+        "unit_price": 1749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1095",
+    "customer_id": "CUST-043",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-06T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1095",
+        "product_id": "P010",
+        "qty": 2,
+        "unit_price": 7849.0
+      },
+      {
+        "order_id": "ORD-1095",
+        "product_id": "P055",
+        "qty": 1,
+        "unit_price": 1799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1096",
+    "customer_id": "CUST-048",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-09T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1096",
+        "product_id": "P076",
+        "qty": 2,
+        "unit_price": 999.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1097",
+    "customer_id": "CUST-007",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-15T03:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1097",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      },
+      {
+        "order_id": "ORD-1097",
+        "product_id": "P019",
+        "qty": 1,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1098",
+    "customer_id": "CUST-028",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-17T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1098",
+        "product_id": "P035",
+        "qty": 2,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1099",
+    "customer_id": "CUST-025",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-06T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1099",
+        "product_id": "P030",
+        "qty": 2,
+        "unit_price": 3649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1100",
+    "customer_id": "CUST-031",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-07T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1100",
+        "product_id": "P056",
+        "qty": 2,
+        "unit_price": 1749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1101",
+    "customer_id": "CUST-042",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-21T13:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1101",
+        "product_id": "P055",
+        "qty": 1,
+        "unit_price": 1799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1102",
+    "customer_id": "CUST-059",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-10-01T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1102",
+        "product_id": "P067",
+        "qty": 2,
+        "unit_price": 1099.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1103",
+    "customer_id": "CUST-011",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-27T04:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1103",
+        "product_id": "P013",
+        "qty": 2,
+        "unit_price": 3049.0
+      },
+      {
+        "order_id": "ORD-1103",
+        "product_id": "P002",
+        "qty": 2,
+        "unit_price": 1149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1104",
+    "customer_id": "CUST-038",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-28T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1104",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      },
+      {
+        "order_id": "ORD-1104",
+        "product_id": "P047",
+        "qty": 2,
+        "unit_price": 799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1105",
+    "customer_id": "CUST-006",
+    "status": "placed",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-10-06T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1105",
+        "product_id": "P014",
+        "qty": 2,
+        "unit_price": 3399.0
+      },
+      {
+        "order_id": "ORD-1105",
+        "product_id": "P043",
+        "qty": 1,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1106",
+    "customer_id": "CUST-017",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-28T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1106",
+        "product_id": "P029",
+        "qty": 2,
+        "unit_price": 5199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1107",
+    "customer_id": "CUST-032",
+    "status": "placed",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-10-09T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1107",
+        "product_id": "P056",
+        "qty": 2,
+        "unit_price": 1749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1108",
+    "customer_id": "CUST-005",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-23T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1108",
+        "product_id": "P072",
+        "qty": 1,
+        "unit_price": 1599.0
+      },
+      {
+        "order_id": "ORD-1108",
+        "product_id": "P066",
+        "qty": 2,
+        "unit_price": 949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1109",
+    "customer_id": "CUST-053",
+    "status": "placed",
+    "channel": "web",
+    "placed_at": "2026-10-07T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1109",
+        "product_id": "P010",
+        "qty": 2,
+        "unit_price": 7849.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1110",
+    "customer_id": "CUST-057",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-10-02T11:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1110",
+        "product_id": "P061",
+        "qty": 2,
+        "unit_price": 1449.0
+      },
+      {
+        "order_id": "ORD-1110",
+        "product_id": "P063",
+        "qty": 2,
+        "unit_price": 1249.0
+      },
+      {
+        "order_id": "ORD-1110",
+        "product_id": "P079",
+        "qty": 2,
+        "unit_price": 6899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1111",
+    "customer_id": "CUST-032",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-21T03:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1111",
+        "product_id": "P050",
+        "qty": 1,
+        "unit_price": 2399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1112",
+    "customer_id": "CUST-011",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-07T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1112",
+        "product_id": "P076",
+        "qty": 2,
+        "unit_price": 999.0
+      },
+      {
+        "order_id": "ORD-1112",
+        "product_id": "P019",
+        "qty": 1,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1113",
+    "customer_id": "CUST-041",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-25T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1113",
+        "product_id": "P071",
+        "qty": 2,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1114",
+    "customer_id": "CUST-022",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-10-05T09:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1114",
+        "product_id": "P018",
+        "qty": 1,
+        "unit_price": 2549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1115",
+    "customer_id": "CUST-021",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-03T09:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1115",
+        "product_id": "P002",
+        "qty": 1,
+        "unit_price": 1149.0
+      },
+      {
+        "order_id": "ORD-1115",
+        "product_id": "P035",
+        "qty": 2,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1116",
+    "customer_id": "CUST-018",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-27T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1116",
+        "product_id": "P055",
+        "qty": 1,
+        "unit_price": 1799.0
+      },
+      {
+        "order_id": "ORD-1116",
+        "product_id": "P070",
+        "qty": 2,
+        "unit_price": 1899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1117",
+    "customer_id": "CUST-003",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-27T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1117",
+        "product_id": "P049",
+        "qty": 1,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1118",
+    "customer_id": "CUST-009",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-16T22:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1118",
+        "product_id": "P079",
+        "qty": 1,
+        "unit_price": 6899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1119",
+    "customer_id": "CUST-031",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-20T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1119",
+        "product_id": "P015",
+        "qty": 2,
+        "unit_price": 2349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1120",
+    "customer_id": "CUST-039",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-04T21:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1120",
+        "product_id": "P035",
+        "qty": 2,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1121",
+    "customer_id": "CUST-055",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-18T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1121",
+        "product_id": "P042",
+        "qty": 2,
+        "unit_price": 899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1122",
+    "customer_id": "CUST-007",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-09T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1122",
+        "product_id": "P070",
+        "qty": 1,
+        "unit_price": 1899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1123",
+    "customer_id": "CUST-049",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-25T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1123",
+        "product_id": "P077",
+        "qty": 2,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1124",
+    "customer_id": "CUST-053",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-26T21:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1124",
+        "product_id": "P008",
+        "qty": 2,
+        "unit_price": 449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1125",
+    "customer_id": "CUST-029",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-11T18:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1125",
+        "product_id": "P041",
+        "qty": 2,
+        "unit_price": 1549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1126",
+    "customer_id": "CUST-055",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-25T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1126",
+        "product_id": "P039",
+        "qty": 1,
+        "unit_price": 1549.0
+      },
+      {
+        "order_id": "ORD-1126",
+        "product_id": "P053",
+        "qty": 1,
+        "unit_price": 2449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1127",
+    "customer_id": "CUST-038",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-31T00:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1127",
+        "product_id": "P055",
+        "qty": 2,
+        "unit_price": 1799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1128",
+    "customer_id": "CUST-046",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-16T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1128",
+        "product_id": "P014",
+        "qty": 1,
+        "unit_price": 3399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1129",
+    "customer_id": "CUST-030",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-15T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1129",
+        "product_id": "P080",
+        "qty": 2,
+        "unit_price": 5149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1130",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-14T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1130",
+        "product_id": "P044",
+        "qty": 1,
+        "unit_price": 2649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1131",
+    "customer_id": "CUST-052",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-14T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1131",
+        "product_id": "P080",
+        "qty": 1,
+        "unit_price": 5149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1132",
+    "customer_id": "CUST-015",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-17T22:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1132",
+        "product_id": "P068",
+        "qty": 1,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1132",
+        "product_id": "P045",
+        "qty": 1,
+        "unit_price": 2699.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1133",
+    "customer_id": "CUST-058",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-14T06:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1133",
+        "product_id": "P071",
+        "qty": 2,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1134",
+    "customer_id": "CUST-009",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-16T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1134",
+        "product_id": "P034",
+        "qty": 1,
+        "unit_price": 2449.0
+      },
+      {
+        "order_id": "ORD-1134",
+        "product_id": "P007",
+        "qty": 1,
+        "unit_price": 299.0
+      },
+      {
+        "order_id": "ORD-1134",
+        "product_id": "P008",
+        "qty": 1,
+        "unit_price": 449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1135",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-16T21:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1135",
+        "product_id": "P070",
+        "qty": 1,
+        "unit_price": 1899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1136",
+    "customer_id": "CUST-033",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-16T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1136",
+        "product_id": "P021",
+        "qty": 1,
+        "unit_price": 2149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1137",
+    "customer_id": "CUST-039",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-28T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1137",
+        "product_id": "P011",
+        "qty": 1,
+        "unit_price": 4249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1138",
+    "customer_id": "CUST-040",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-31T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1138",
+        "product_id": "P025",
+        "qty": 2,
+        "unit_price": 5699.0
+      },
+      {
+        "order_id": "ORD-1138",
+        "product_id": "P074",
+        "qty": 1,
+        "unit_price": 949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1139",
+    "customer_id": "CUST-040",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-31T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1139",
+        "product_id": "P029",
+        "qty": 2,
+        "unit_price": 5199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1140",
+    "customer_id": "CUST-019",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-14T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1140",
+        "product_id": "P057",
+        "qty": 1,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1141",
+    "customer_id": "CUST-056",
+    "status": "placed",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-10-06T18:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1141",
+        "product_id": "P065",
+        "qty": 2,
+        "unit_price": 599.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1142",
+    "customer_id": "CUST-019",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-04T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1142",
+        "product_id": "P074",
+        "qty": 1,
+        "unit_price": 949.0
+      },
+      {
+        "order_id": "ORD-1142",
+        "product_id": "P047",
+        "qty": 1,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1142",
+        "product_id": "P023",
+        "qty": 1,
+        "unit_price": 1949.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1143",
+    "customer_id": "CUST-008",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-10T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1143",
+        "product_id": "P050",
+        "qty": 2,
+        "unit_price": 2399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1144",
+    "customer_id": "CUST-025",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-26T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1144",
+        "product_id": "P065",
+        "qty": 1,
+        "unit_price": 599.0
+      },
+      {
+        "order_id": "ORD-1144",
+        "product_id": "P057",
+        "qty": 2,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1145",
+    "customer_id": "CUST-048",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-20T03:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1145",
+        "product_id": "P054",
+        "qty": 2,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1146",
+    "customer_id": "user1",
+    "status": "packed",
+    "channel": "web",
+    "placed_at": "2026-10-10T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "packed",
+    "items": [
+      {
+        "order_id": "ORD-1146",
+        "product_id": "P075",
+        "qty": 2,
+        "unit_price": 1149.0
+      },
+      {
+        "order_id": "ORD-1146",
+        "product_id": "P012",
+        "qty": 1,
+        "unit_price": 4849.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1147",
+    "customer_id": "CUST-045",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-26T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1147",
+        "product_id": "P063",
+        "qty": 2,
+        "unit_price": 1249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1148",
+    "customer_id": "CUST-050",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-17T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1148",
+        "product_id": "P033",
+        "qty": 1,
+        "unit_price": 1199.0
+      },
+      {
+        "order_id": "ORD-1148",
+        "product_id": "P004",
+        "qty": 2,
+        "unit_price": 1349.0
+      },
+      {
+        "order_id": "ORD-1148",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1149",
+    "customer_id": "CUST-010",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-03T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1149",
+        "product_id": "P065",
+        "qty": 2,
+        "unit_price": 599.0
+      },
+      {
+        "order_id": "ORD-1149",
+        "product_id": "P029",
+        "qty": 1,
+        "unit_price": 5199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1150",
+    "customer_id": "CUST-018",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-29T21:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1150",
+        "product_id": "P044",
+        "qty": 2,
+        "unit_price": 2649.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1151",
+    "customer_id": "CUST-040",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-18T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1151",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1152",
+    "customer_id": "CUST-052",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-19T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1152",
+        "product_id": "P008",
+        "qty": 1,
+        "unit_price": 449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1153",
+    "customer_id": "CUST-036",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-09T07:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1153",
+        "product_id": "P043",
+        "qty": 1,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1154",
+    "customer_id": "u123",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-16T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1154",
+        "product_id": "P011",
+        "qty": 2,
+        "unit_price": 4249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1155",
+    "customer_id": "CUST-013",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-19T12:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1155",
+        "product_id": "P009",
+        "qty": 2,
+        "unit_price": 499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1156",
+    "customer_id": "CUST-011",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-11T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1156",
+        "product_id": "P041",
+        "qty": 1,
+        "unit_price": 1549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1157",
+    "customer_id": "CUST-007",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-20T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1157",
+        "product_id": "P034",
+        "qty": 1,
+        "unit_price": 2449.0
+      },
+      {
+        "order_id": "ORD-1157",
+        "product_id": "P052",
+        "qty": 1,
+        "unit_price": 2749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1158",
+    "customer_id": "CUST-049",
+    "status": "shipped",
+    "channel": "web",
+    "placed_at": "2026-10-07T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "shipped",
+    "items": [
+      {
+        "order_id": "ORD-1158",
+        "product_id": "P069",
+        "qty": 2,
+        "unit_price": 1299.0
+      },
+      {
+        "order_id": "ORD-1158",
+        "product_id": "P042",
+        "qty": 1,
+        "unit_price": 899.0
+      },
+      {
+        "order_id": "ORD-1158",
+        "product_id": "P027",
+        "qty": 2,
+        "unit_price": 7599.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1159",
+    "customer_id": "CUST-010",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-20T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1159",
+        "product_id": "P029",
+        "qty": 2,
+        "unit_price": 5199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1160",
+    "customer_id": "CUST-010",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-09T09:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1160",
+        "product_id": "P054",
+        "qty": 2,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1161",
+    "customer_id": "u123",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-18T02:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1161",
+        "product_id": "P009",
+        "qty": 1,
+        "unit_price": 499.0
+      },
+      {
+        "order_id": "ORD-1161",
+        "product_id": "P034",
+        "qty": 2,
+        "unit_price": 2449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1162",
+    "customer_id": "CUST-031",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-29T00:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1162",
+        "product_id": "P043",
+        "qty": 2,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1163",
+    "customer_id": "CUST-034",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-05T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1163",
+        "product_id": "P068",
+        "qty": 1,
+        "unit_price": 799.0
+      },
+      {
+        "order_id": "ORD-1163",
+        "product_id": "P047",
+        "qty": 2,
+        "unit_price": 799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1164",
+    "customer_id": "CUST-036",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-20T20:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1164",
+        "product_id": "P001",
+        "qty": 2,
+        "unit_price": 1049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1165",
+    "customer_id": "CUST-023",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-11T05:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1165",
+        "product_id": "P037",
+        "qty": 1,
+        "unit_price": 3149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1166",
+    "customer_id": "CUST-048",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-29T11:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1166",
+        "product_id": "P007",
+        "qty": 2,
+        "unit_price": 299.0
+      },
+      {
+        "order_id": "ORD-1166",
+        "product_id": "P035",
+        "qty": 1,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1167",
+    "customer_id": "CUST-030",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-09-29T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1167",
+        "product_id": "P075",
+        "qty": 2,
+        "unit_price": 1149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1168",
+    "customer_id": "u123",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-16T07:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1168",
+        "product_id": "P014",
+        "qty": 2,
+        "unit_price": 3399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1169",
+    "customer_id": "CUST-022",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-20T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1169",
+        "product_id": "P036",
+        "qty": 2,
+        "unit_price": 1749.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1170",
+    "customer_id": "CUST-038",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-11T01:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1170",
+        "product_id": "P042",
+        "qty": 2,
+        "unit_price": 899.0
+      },
+      {
+        "order_id": "ORD-1170",
+        "product_id": "P021",
+        "qty": 2,
+        "unit_price": 2149.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1171",
+    "customer_id": "CUST-005",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-31T09:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1171",
+        "product_id": "P001",
+        "qty": 2,
+        "unit_price": 1049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1172",
+    "customer_id": "CUST-006",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-19T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1172",
+        "product_id": "P057",
+        "qty": 2,
+        "unit_price": 1199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1173",
+    "customer_id": "CUST-039",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-07-15T05:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1173",
+        "product_id": "P005",
+        "qty": 1,
+        "unit_price": 1349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1174",
+    "customer_id": "CUST-005",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-08T17:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1174",
+        "product_id": "P048",
+        "qty": 1,
+        "unit_price": 699.0
+      },
+      {
+        "order_id": "ORD-1174",
+        "product_id": "P076",
+        "qty": 2,
+        "unit_price": 999.0
+      },
+      {
+        "order_id": "ORD-1174",
+        "product_id": "P041",
+        "qty": 2,
+        "unit_price": 1549.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1175",
+    "customer_id": "CUST-027",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-19T22:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1175",
+        "product_id": "P049",
+        "qty": 1,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1176",
+    "customer_id": "CUST-015",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-11T13:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1176",
+        "product_id": "P058",
+        "qty": 1,
+        "unit_price": 2199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1177",
+    "customer_id": "CUST-005",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-04T05:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1177",
+        "product_id": "P018",
+        "qty": 1,
+        "unit_price": 2549.0
+      },
+      {
+        "order_id": "ORD-1177",
+        "product_id": "P043",
+        "qty": 2,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1178",
+    "customer_id": "CUST-004",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-14T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1178",
+        "product_id": "P042",
+        "qty": 1,
+        "unit_price": 899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1179",
+    "customer_id": "CUST-022",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-20T10:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1179",
+        "product_id": "P056",
+        "qty": 2,
+        "unit_price": 1749.0
+      },
+      {
+        "order_id": "ORD-1179",
+        "product_id": "P049",
+        "qty": 1,
+        "unit_price": 2049.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1180",
+    "customer_id": "CUST-055",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-18T03:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1180",
+        "product_id": "P069",
+        "qty": 2,
+        "unit_price": 1299.0
+      },
+      {
+        "order_id": "ORD-1180",
+        "product_id": "P034",
+        "qty": 1,
+        "unit_price": 2449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1181",
+    "customer_id": "CUST-008",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-06T19:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1181",
+        "product_id": "P002",
+        "qty": 2,
+        "unit_price": 1149.0
+      },
+      {
+        "order_id": "ORD-1181",
+        "product_id": "P024",
+        "qty": 2,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1182",
+    "customer_id": "CUST-007",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-07-27T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1182",
+        "product_id": "P056",
+        "qty": 1,
+        "unit_price": 1749.0
+      },
+      {
+        "order_id": "ORD-1182",
+        "product_id": "P080",
+        "qty": 2,
+        "unit_price": 5149.0
+      },
+      {
+        "order_id": "ORD-1182",
+        "product_id": "P028",
+        "qty": 2,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1183",
+    "customer_id": "CUST-028",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-19T00:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1183",
+        "product_id": "P015",
+        "qty": 2,
+        "unit_price": 2349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1184",
+    "customer_id": "CUST-025",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-03T08:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1184",
+        "product_id": "P029",
+        "qty": 2,
+        "unit_price": 5199.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1185",
+    "customer_id": "CUST-024",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-09-28T23:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1185",
+        "product_id": "P015",
+        "qty": 1,
+        "unit_price": 2349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1186",
+    "customer_id": "CUST-030",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-20T16:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1186",
+        "product_id": "P065",
+        "qty": 1,
+        "unit_price": 599.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1187",
+    "customer_id": "CUST-045",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-09T04:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1187",
+        "product_id": "P004",
+        "qty": 1,
+        "unit_price": 1349.0
+      },
+      {
+        "order_id": "ORD-1187",
+        "product_id": "P044",
+        "qty": 2,
+        "unit_price": 2649.0
+      },
+      {
+        "order_id": "ORD-1187",
+        "product_id": "P019",
+        "qty": 2,
+        "unit_price": 2499.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1188",
+    "customer_id": "CUST-027",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-27T14:21:31.741908",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1188",
+        "product_id": "P009",
+        "qty": 1,
+        "unit_price": 499.0
+      },
+      {
+        "order_id": "ORD-1188",
+        "product_id": "P028",
+        "qty": 1,
+        "unit_price": 4349.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1189",
+    "customer_id": "CUST-059",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-29T13:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1189",
+        "product_id": "P048",
+        "qty": 1,
+        "unit_price": 699.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1190",
+    "customer_id": "CUST-013",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-29T19:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1190",
+        "product_id": "P068",
+        "qty": 1,
+        "unit_price": 799.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1191",
+    "customer_id": "CUST-018",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-08-10T21:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1191",
+        "product_id": "P073",
+        "qty": 1,
+        "unit_price": 849.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1192",
+    "customer_id": "CUST-053",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-17T05:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1192",
+        "product_id": "P073",
+        "qty": 1,
+        "unit_price": 849.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1193",
+    "customer_id": "CUST-003",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-09-05T09:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1193",
+        "product_id": "P020",
+        "qty": 1,
+        "unit_price": 1899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1194",
+    "customer_id": "CUST-040",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-14T13:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1194",
+        "product_id": "P011",
+        "qty": 2,
+        "unit_price": 4249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1195",
+    "customer_id": "CUST-019",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-07-18T09:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1195",
+        "product_id": "P059",
+        "qty": 1,
+        "unit_price": 1399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1196",
+    "customer_id": "CUST-049",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-23T06:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1196",
+        "product_id": "P022",
+        "qty": 1,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1197",
+    "customer_id": "CUST-042",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-07-22T08:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1197",
+        "product_id": "P024",
+        "qty": 1,
+        "unit_price": 2499.0
+      },
+      {
+        "order_id": "ORD-1197",
+        "product_id": "P054",
+        "qty": 2,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1198",
+    "customer_id": "CUST-020",
+    "status": "delivered",
+    "channel": "whatsapp_sim",
+    "placed_at": "2026-08-30T07:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1198",
+        "product_id": "P029",
+        "qty": 1,
+        "unit_price": 5199.0
+      },
+      {
+        "order_id": "ORD-1198",
+        "product_id": "P081",
+        "qty": 1,
+        "unit_price": 4399.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1199",
+    "customer_id": "CUST-030",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-29T02:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1199",
+        "product_id": "P040",
+        "qty": 2,
+        "unit_price": 899.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1200",
+    "customer_id": "CUST-053",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-19T18:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1200",
+        "product_id": "P054",
+        "qty": 1,
+        "unit_price": 2249.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1201",
+    "customer_id": "CUST-050",
+    "status": "delivered",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-08-28T18:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1201",
+        "product_id": "P007",
+        "qty": 2,
+        "unit_price": 299.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1202",
+    "customer_id": "CUST-006",
+    "status": "placed",
+    "channel": "kiosk_sim",
+    "placed_at": "2026-10-07T03:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "placed",
+    "items": [
+      {
+        "order_id": "ORD-1202",
+        "product_id": "P034",
+        "qty": 1,
+        "unit_price": 2449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1203",
+    "customer_id": "CUST-003",
+    "status": "delivered",
+    "channel": "web",
+    "placed_at": "2026-08-24T13:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1203",
+        "product_id": "P061",
+        "qty": 2,
+        "unit_price": 1449.0
+      }
+    ]
+  },
+  {
+    "id": "ORD-1204",
+    "customer_id": "CUST-012",
+    "status": "delivered",
+    "channel": "mobile",
+    "placed_at": "2026-09-30T19:21:31.742914",
+    "payment_status": "completed",
+    "shipment_status": "delivered",
+    "items": [
+      {
+        "order_id": "ORD-1204",
+        "product_id": "P065",
+        "qty": 2,
+        "unit_price": 599.0
+      }
+    ]
+  }
+]

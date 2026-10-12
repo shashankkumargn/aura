@@ -1,0 +1,49 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aura-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+    environment:
+      - PYTHONPATH=/app
+    command: sh -c "python -m app.data.seed && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
+
+  dashboard:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aura-dashboard
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    env_file:
+      - ./backend/.env
+    volumes:
+      - ./backend:/app
+      - ./dashboard:/dashboard
+    working_dir: /dashboard
+    environment:
+      - PYTHONPATH=/app
+    command: streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+    depends_on:
+      - backend
+
+  frontend:
+    image: node:20-slim
+    container_name: aura-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    command: sh -c "npm install && npm run dev -- --host"
+    depends_on:
+      - backend
