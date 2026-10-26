@@ -65,6 +65,266 @@ body {
   overscroll-behavior: contain;
 }
 
+.main-content {
+  padding: 24px 28px;
+}
+
+.chat-playground-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 20px;
+}
+
+.chat-card {
+  min-width: 0;
+  min-height: 640px;
+}
+
+.chat-message-history {
+  min-height: 0;
+  scroll-behavior: smooth;
+}
+
+.assistant-message-content {
+  width: fit-content;
+  max-width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #1b2940;
+  border-radius: 4px 16px 16px 16px;
+  background: linear-gradient(145deg, #101827 0%, #0e1522 100%);
+  overflow-wrap: anywhere;
+}
+
+.assistant-message-content .message-paragraph {
+  margin: 0;
+}
+
+.assistant-message-content .message-paragraph + .message-paragraph,
+.assistant-message-content .message-list + .message-paragraph,
+.assistant-message-content .message-paragraph + .message-list,
+.assistant-message-content .message-heading + .message-paragraph,
+.assistant-message-content .message-heading + .message-list {
+  margin-top: 12px;
+}
+
+.assistant-message-content .message-heading {
+  margin: 0 0 8px;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.assistant-message-content .message-list {
+  display: grid;
+  gap: 7px;
+  padding-left: 1.35rem;
+}
+
+.assistant-message-content .message-list li {
+  padding-left: 3px;
+}
+
+.assistant-message-content .message-list li::marker {
+  color: var(--emerald-400);
+}
+
+.assistant-message-content strong {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.assistant-message-content a {
+  color: var(--emerald-400);
+  text-decoration: underline;
+  text-decoration-color: rgba(52, 211, 153, 0.55);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.assistant-message-content a:hover {
+  color: #a7f3d0;
+  text-decoration-color: currentColor;
+}
+
+.user-message-bubble {
+  overflow-wrap: anywhere;
+}
+
+.amazon-product-grid {
+  width: min(100%, 780px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.amazon-product-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #23314a;
+  border-radius: 14px;
+  background: #0b111c;
+}
+
+.amazon-product-image,
+.amazon-product-image-placeholder {
+  display: flex;
+  width: 100%;
+  height: 190px;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  object-fit: contain;
+}
+
+.amazon-product-image-placeholder {
+  flex-direction: column;
+  gap: 8px;
+  color: #64748b;
+  background: #111827;
+  font-size: 0.75rem;
+}
+
+.amazon-product-thumbnails {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  padding: 8px 10px 0;
+}
+
+.amazon-product-thumbnail {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  padding: 2px;
+  border: 1px solid #28364c;
+  border-radius: 7px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.amazon-product-thumbnail.selected {
+  border-color: var(--emerald-400);
+  box-shadow: 0 0 0 1px var(--emerald-400);
+}
+
+.amazon-product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.amazon-product-details {
+  display: grid;
+  gap: 9px;
+  padding: 13px;
+}
+
+.amazon-product-details h4 {
+  color: #f1f5f9;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.amazon-product-brand,
+.amazon-product-variant-label {
+  color: #94a3b8;
+  font-size: 0.72rem;
+}
+
+.amazon-product-match-tag {
+  width: fit-content;
+  padding: 3px 7px;
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  border-radius: 999px;
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, 0.1);
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+
+.amazon-product-match-tag.alternative {
+  border-color: rgba(96, 165, 250, 0.3);
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.amazon-product-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.amazon-product-price {
+  color: #6ee7b7;
+  font-size: 1rem;
+}
+
+.amazon-product-rating {
+  color: #fbbf24;
+  font-size: 0.73rem;
+}
+
+.amazon-product-stock,
+.amazon-product-delivery {
+  color: #a7f3d0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.amazon-product-description {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #aab7c9;
+  font-size: 0.76rem;
+  line-height: 1.5;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.amazon-product-variant-group {
+  display: grid;
+  gap: 6px;
+}
+
+.amazon-product-variant-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.amazon-product-variant {
+  padding: 4px 7px;
+  border: 1px solid #27354b;
+  border-radius: 6px;
+  color: #cbd5e1;
+  background: #111a29;
+  font-size: 0.68rem;
+  line-height: 1.35;
+}
+
+.amazon-product-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #062c21;
+  background: #6ee7b7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.amazon-product-link:hover {
+  background: #a7f3d0;
+}
+
 /* Animations */
 @keyframes pulseGlow {
   0%, 100% { opacity: 1; transform: scale(1); }
@@ -83,3 +343,30 @@ body {
 .typing-dot-1 { animation: typingDot 1.2s infinite ease-in-out 0s; }
 .typing-dot-2 { animation: typingDot 1.2s infinite ease-in-out 0.2s; }
 .typing-dot-3 { animation: typingDot 1.2s infinite ease-in-out 0.4s; }
+
+@media (max-width: 1100px) {
+  .chat-playground-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .main-content {
+    padding: 16px 12px;
+  }
+
+  .chat-card {
+    height: calc(100dvh - 180px) !important;
+    min-height: 440px;
+  }
+
+  .chat-message-history {
+    padding: 18px 12px !important;
+    gap: 16px !important;
+  }
+
+  .assistant-message-content {
+    padding: 12px 14px;
+  }
+
+}

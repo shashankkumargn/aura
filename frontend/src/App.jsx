@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Sparkles,
-  Send,
   MessageSquare,
   LayoutDashboard,
   Cpu,
@@ -77,7 +76,7 @@ const WELCOME_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
   agent: 'AURA',
-  content: "Hi, I'm AURA. Ask about products, stock, orders, loyalty, or returns — I'll route your request through the live agent pipeline.",
+  content: "Hi, I'm AURA. Ask about products, stock, orders, loyalty, or returns — I'll route your request through the live agents.",
   source: null,
   latency: null,
 };
@@ -97,6 +96,237 @@ function createSessionId() {
   return `SES-${Date.now().toString(36).toUpperCase()}`;
 }
 
+function renderInlineContent(content) {
+  const parts = [];
+  const pattern = /\*\*[^*]+\*\*|\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)|(https?:\/\/[^\s<]+)/g;
+  let previousIndex = 0;
+  let match;
+
+  while ((match = pattern.exec(content)) !== null) {
+    if (match.index > previousIndex) parts.push(content.slice(previousIndex, match.index));
+
+    if (match[0].startsWith('**')) {
+      parts.push(<strong key={`bold-${match.index}`}>{match[0].slice(2, -2)}</strong>);
+    } else {
+      const isMarkdownLink = Boolean(match[1]);
+      const rawUrl = isMarkdownLink ? match[2] : match[3];
+      const url = isMarkdownLink ? rawUrl : rawUrl.replace(/[.,!?;:)]+$/, '');
+      const trailingText = isMarkdownLink ? '' : rawUrl.slice(url.length);
+
+      try {
+        const parsedUrl = new URL(url);
+        if (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') {
+          parts.push(
+            <a
+              key={`link-${match.index}`}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {isMarkdownLink ? match[1] : url}
+            </a>
+          );
+        } else {
+          parts.push(match[0]);
+        }
+      } catch {
+        parts.push(match[0]);
+      }
+
+      if (trailingText) parts.push(trailingText);
+    }
+    previousIndex = match.index + match[0].length;
+  }
+
+  if (previousIndex < content.length) parts.push(content.slice(previousIndex));
+  return parts;
+}
+
+function renderMessageContent(content) {
+  const blocks = [];
+  let paragraph = [];
+  let list = null;
+
+  const flushParagraph = () => {
+    if (paragraph.length) {
+      blocks.push({ type: 'paragraph', content: paragraph.join(' ') });
+      paragraph = [];
+    }
+  };
+  const flushList = () => {
+    if (list) {
+      blocks.push(list);
+      list = null;
+    }
+  };
+
+  String(content || '').split(/\r?\n/).forEach((rawLine) => {
+    const line = rawLine.trim();
+    if (!line) {
+      flushParagraph();
+      flushList();
+      return;
+    }
+
+    const heading = line.match(/^#{1,3}\s+(.+)$/);
+    const item = line.match(/^(?:[-*•]|\d+[.)])\s+(.+)$/);
+    if (heading) {
+      flushParagraph();
+      flushList();
+      blocks.push({ type: 'heading', content: heading[1] });
+    } else if (item) {
+      flushParagraph();
+      const type = /^\d/.test(line) ? 'ordered-list' : 'unordered-list';
+      if (list?.type !== type) flushList();
+      if (!list) list = { type, items: [] };
+      list.items.push(item[1]);
+    } else {
+      flushList();
+      paragraph.push(line);
+    }
+  });
+  flushParagraph();
+  flushList();
+
+  return blocks.map((block, index) => {
+    if (block.type === 'heading') {
+      return <h3 className="message-heading" key={`block-${index}`}>{renderInlineContent(block.content)}</h3>;
+    }
+    if (block.type === 'unordered-list' || block.type === 'ordered-list') {
+      const List = block.type === 'ordered-list' ? 'ol' : 'ul';
+      return (
+        <List className="message-list" key={`block-${index}`}>
+          {block.items.map((item, itemIndex) => (
+            <li key={`item-${itemIndex}`}>{renderInlineContent(item)}</li>
+          ))}
+        </List>
+      );
+    }
+    return <p className="message-paragraph" key={`block-${index}`}>{renderInlineContent(block.content)}</p>;
+  });
+}
+
+function isAmazonProductUrl(value) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === 'https:' && /(^|\.)amazon\.[a-z]{2,3}(\.[a-z]{2})?$/.test(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
+function isAmazonImageUrl(value) {
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === 'https:' && /\.(media-amazon|ssl-images-amazon)\.com$/.test(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
+function formatAmazonPrice(product) {
+  if (product.currency) {
+    const amount = Number(product.extracted_price);
+    if (product.extracted_price != null && product.extracted_price !== '' && Number.isFinite(amount)) {
+      return new Intl.NumberFormat(product.currency_locale || 'en-US', {
+        style: 'currency',
+        currency: product.currency,
+        maximumFractionDigits: 2,
+      }).format(amount);
+    }
+    const currencySymbols = { INR: '₹', USD: '$', GBP: '£' };
+    const expectedSymbol = currencySymbols[product.currency];
+    if (typeof product.price === 'string' && expectedSymbol && product.price.includes(expectedSymbol)) {
+      return product.price;
+    }
+  }
+  return product.price;
+}
+
+function AmazonProductCard({ product }) {
+  const images = Array.isArray(product.images) ? product.images.filter(isAmazonImageUrl) : [];
+  const [selectedImage, setSelectedImage] = useState(images[0] || '');
+  const variants = Array.isArray(product.variants) ? product.variants : [];
+  const delivery = Array.isArray(product.delivery) ? product.delivery : [];
+
+  return (
+    <article className="amazon-product-card">
+      {selectedImage ? (
+        <img className="amazon-product-image" src={selectedImage} alt={product.title || 'Amazon product'} loading="lazy" />
+      ) : (
+        <div className="amazon-product-image-placeholder" aria-label="Product image unavailable">
+          <ShoppingBag size={28} />
+          <span>Image unavailable</span>
+        </div>
+      )}
+      {images.length > 1 && (
+        <div className="amazon-product-thumbnails" aria-label="Product images">
+          {images.slice(0, 5).map((image, index) => (
+            <button
+              className={`amazon-product-thumbnail${selectedImage === image ? ' selected' : ''}`}
+              key={image}
+              type="button"
+              onClick={() => setSelectedImage(image)}
+              aria-label={`View product image ${index + 1}`}
+              aria-pressed={selectedImage === image}
+            >
+              <img src={image} alt="" loading="lazy" />
+            </button>
+          ))}
+        </div>
+      )}
+      <div className="amazon-product-details">
+        <h4>{product.title}</h4>
+        {product.brand && <div className="amazon-product-brand">{product.brand}</div>}
+        {product.aura_recommendation && (
+          <span className="amazon-product-match-tag">
+            Related to AURA suggestion: {product.aura_recommendation}
+          </span>
+        )}
+        {product.result_type && !product.aura_recommendation && (
+          <span className={`amazon-product-match-tag${product.result_type === 'alternative' ? ' alternative' : ''}`}>
+            {product.result_type === 'alternative'
+              ? `Alternative${product.brand ? ` · ${product.brand}` : ''}`
+              : 'Closest match'}
+          </span>
+        )}
+        <div className="amazon-product-meta">
+          {formatAmazonPrice(product) && <strong className="amazon-product-price">{formatAmazonPrice(product)}</strong>}
+          {product.rating != null && (
+            <span className="amazon-product-rating">★ {product.rating}{product.reviews ? ` · ${Number(product.reviews).toLocaleString()} reviews` : ''}</span>
+          )}
+        </div>
+        {product.stock && <div className="amazon-product-stock">{product.stock}</div>}
+        {product.description && <p className="amazon-product-description">{product.description}</p>}
+        {variants.map((variant, index) => (
+          <div className="amazon-product-variant-group" key={`${variant.name}-${index}`}>
+            <span className="amazon-product-variant-label">{variant.name}</span>
+            <div className="amazon-product-variant-list">
+              {(variant.items || []).map((item) => (
+                <span className="amazon-product-variant" key={item}>{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+        {!variants.length && product.options_summary && (
+          <div className="amazon-product-variant-group">
+            <span className="amazon-product-variant-label">Options</span>
+            <span className="amazon-product-variant">{product.options_summary}</span>
+          </div>
+        )}
+        {delivery.slice(0, 1).map((detail) => (
+          <div className="amazon-product-delivery" key={detail}>{detail}</div>
+        ))}
+        {isAmazonProductUrl(product.url) && (
+          <a className="amazon-product-link" href={product.url} target="_blank" rel="noopener noreferrer">
+            View on Amazon <ExternalLink size={14} />
+          </a>
+        )}
+      </div>
+    </article>
+  );
+}
+
 export default function App() {
   const [activeTab, setActiveTab] = useState('agent_playground');
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -105,6 +335,7 @@ export default function App() {
   const [sessionId, setSessionId] = useState(() => createSessionId());
   const [messages, setMessages] = useState([WELCOME_MESSAGE]);
   const [input, setInput] = useState('');
+  const [amazonDomain, setAmazonDomain] = useState('amazon.in');
   const [loading, setLoading] = useState(false);
   const [activeAgent, setActiveAgent] = useState('Coordinator');
   const [executionState, setExecutionState] = useState({
@@ -218,9 +449,123 @@ export default function App() {
     });
   };
 
+  const handleAmazonSearch = async (query, requestedMarketplace) => {
+    const trimmedQuery = query.trim();
+    if (!trimmedQuery || loading) return;
+
+    const startedAt = performance.now();
+    const marketplace = requestedMarketplace || amazonDomain;
+    const searchText = `Search ${marketplace} for ${trimmedQuery}`;
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: `${Date.now()}-amazon-user`,
+        role: 'user',
+        content: searchText,
+      },
+    ]);
+    setLoading(true);
+    setActiveAgent('Amazon Search');
+    setExecutionState({
+      coordinator: 'Direct product search',
+      supervisor: 'SerpAPI Amazon engine',
+      subagent: `Searching ${marketplace}`,
+      composer: 'Waiting for results',
+      currentSubagentName: 'Amazon Search',
+    });
+
+    try {
+      const response = await fetch(`${API_BASE}/amazon-search`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: trimmedQuery, amazon_domain: marketplace, max_results: 5 }),
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.detail || `Amazon search failed (${response.status}).`);
+      }
+
+      const products = Array.isArray(data.products) ? data.products : [];
+      const hasRequestedProduct = products.some((product) => product.result_type === 'requested');
+      const hasAlternatives = products.some((product) => product.result_type === 'alternative');
+      const elapsed = ((performance.now() - startedAt) / 1000).toFixed(2);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `${Date.now()}-amazon-assistant`,
+          role: 'assistant',
+          agent: 'Amazon Search',
+          content: products.length
+            ? `${hasRequestedProduct
+              ? `Amazon results for **${trimmedQuery}**${hasAlternatives ? ', plus competing phone brands' : ''}.`
+              : `No exact Amazon listing was found for **${trimmedQuery}**${hasAlternatives ? '; showing competing phone brands instead' : ''}.`} Prices and availability may change; check Amazon for the latest details.`
+            : `I couldn't find Amazon listings for **${trimmedQuery}**. Try a different product name.`,
+          products,
+          latency: `${elapsed} s`,
+        },
+      ]);
+      setExecutionState({
+        coordinator: 'Amazon search complete',
+        supervisor: 'Direct SerpAPI lookup',
+        subagent: `${products.length} product${products.length === 1 ? '' : 's'} found`,
+        composer: 'Results displayed',
+        currentSubagentName: 'Amazon Search',
+      });
+    } catch (error) {
+      const elapsed = ((performance.now() - startedAt) / 1000).toFixed(2);
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: `${Date.now()}-amazon-error`,
+          role: 'assistant',
+          agent: 'Amazon Search',
+          content: error instanceof TypeError
+            ? 'Could not connect to AURA. Check that the backend is running and try again.'
+            : `Amazon search failed: ${error.message}`,
+          latency: `${elapsed} s`,
+        },
+      ]);
+      setExecutionState({
+        coordinator: 'Amazon search failed',
+        supervisor: 'Request stopped',
+        subagent: 'Check SerpAPI configuration',
+        composer: 'No results displayed',
+        currentSubagentName: 'Amazon Search',
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const handleSend = async (customText) => {
     const text = (customText || input).trim();
     if (!text || loading) return;
+
+    const amazonSearch = text.match(
+      /^\s*(?:please\s+)?(?:search|look\s+up|find)\s+(?:(?:in|on)\s+)?(amazon(?:\.(?:com|in|co\.uk))?)(?:\s+(?:for|:)\s*(.*))?\s*$/i
+    );
+    if (amazonSearch) {
+      const [, requestedMarketplace, explicitQuery] = amazonSearch;
+      const marketplace = requestedMarketplace.includes('.') ? requestedMarketplace.toLowerCase() : amazonDomain;
+      let query = (explicitQuery || '').trim();
+      if (!query) {
+        const previousUserMessage = [...messages]
+          .reverse()
+          .find((message) => message.role === 'user' && message.content.trim());
+        if (previousUserMessage) {
+          const previousAmazonSearch = previousUserMessage.content.match(
+            /^\s*(?:please\s+)?(?:search|look\s+up|find)\s+(?:(?:in|on)\s+)?amazon(?:\.(?:com|in|co\.uk))?\s+(?:for|:)\s*(.+?)\s*$/i
+          );
+          query = (previousAmazonSearch?.[1] || previousUserMessage.content).trim();
+        }
+      }
+      if (query) {
+        setAmazonDomain(marketplace);
+        setInput('');
+        handleAmazonSearch(query, marketplace);
+        return;
+      }
+    }
 
     const userMessageId = Date.now().toString();
     const userMessage = {
@@ -261,7 +606,8 @@ export default function App() {
       const elapsedSec = ((performance.now() - startTime) / 1000).toFixed(2);
 
       if (!res.ok) {
-        throw new Error(`Server returned status ${res.status}`);
+        const errorData = await res.json();
+        throw new Error(errorData.detail || `Server returned status ${res.status}`);
       }
 
       const data = await res.json();
@@ -289,6 +635,7 @@ export default function App() {
         source: (data.retrieved_sources && data.retrieved_sources.length > 0)
           ? data.retrieved_sources[0]
           : null,
+        products: Array.isArray(data.amazon_products) ? data.amazon_products : [],
         latency: `${elapsedSec} s`,
       };
 
@@ -302,7 +649,9 @@ export default function App() {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
           agent: 'Coordinator',
-          content: "Sorry, I could not connect to the backend server. Make sure `uvicorn app.main:app` is running on port 8000.",
+          content: err instanceof TypeError
+            ? "Sorry, I could not connect to the backend server. Make sure the backend is running on port 8000."
+            : `I couldn't complete that request: ${err.message}`,
           source: null,
           latency: `${elapsedSec} s`,
         }
@@ -743,8 +1092,8 @@ export default function App() {
         {/* Content Body Container */}
         <main
           ref={mainRef}
-          className="app-scroll"
-          style={{ flex: 1, minHeight: 0, padding: '24px 28px', overflowY: 'auto', backgroundColor: '#090d14' }}
+          className="app-scroll main-content"
+          style={{ flex: 1, minHeight: 0, overflowY: 'auto', backgroundColor: '#090d14' }}
         >
           {activeTab === 'agents' && (
             <div>
@@ -1067,10 +1416,10 @@ export default function App() {
           </div>
 
           {/* Playground Grid (Left: Chat Window | Right: Context & Execution Path) */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 310px', gap: '20px' }}>
+          <div className="chat-playground-grid">
             
             {/* ================= CENTER CHAT CARD ================= */}
-            <div style={{
+            <div className="chat-card" style={{
               backgroundColor: '#0c111c',
               border: '1px solid #162033',
               borderRadius: '16px',
@@ -1144,7 +1493,7 @@ export default function App() {
               </div>
 
               {/* Message History Area */}
-              <div style={{
+              <div className="chat-message-history" style={{
                 flex: 1,
                 padding: '24px 20px',
                 overflowY: 'auto',
@@ -1155,8 +1504,8 @@ export default function App() {
                 {messages.map((m) => {
                   if (m.role === 'user') {
                     return (
-                      <div key={m.id} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <div style={{
+                      <div key={m.id} className="chat-message-row user-message-row" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <div className="user-message-bubble" style={{
                           backgroundColor: '#182133',
                           border: '1px solid #23314a',
                           color: '#f8fafc',
@@ -1166,7 +1515,7 @@ export default function App() {
                           fontSize: '0.9rem',
                           lineHeight: '1.45',
                         }}>
-                          {m.content}
+                          {renderMessageContent(m.content)}
                         </div>
                       </div>
                     );
@@ -1174,7 +1523,7 @@ export default function App() {
 
                   // Assistant Message
                   return (
-                    <div key={m.id} style={{ display: 'flex', flexDirection: 'column', gap: '6px', maxWidth: '85%' }}>
+                    <div key={m.id} className="chat-message-row assistant-message-row" style={{ display: 'flex', flexDirection: 'column', gap: '6px', maxWidth: '85%' }}>
                       {/* Message Sender Header */}
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <Sparkles size={14} color="#34d399" />
@@ -1194,14 +1543,22 @@ export default function App() {
                       </div>
 
                       {/* Content Body */}
-                      <div style={{
+                      <div className="assistant-message-content" style={{
                         color: '#e2e8f0',
                         fontSize: '0.9rem',
                         lineHeight: '1.55',
                         whiteSpace: 'pre-line',
                       }}>
-                        {m.content}
+                        {renderMessageContent(m.content)}
                       </div>
+
+                      {Array.isArray(m.products) && m.products.length > 0 && (
+                        <div className="amazon-product-grid" aria-label="Amazon product search results">
+                          {m.products.map((product) => (
+                            <AmazonProductCard key={product.asin} product={product} />
+                          ))}
+                        </div>
+                      )}
 
                       {/* Message Footer (Source & Latency) */}
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '4px' }}>
@@ -1215,6 +1572,8 @@ export default function App() {
                           {/* Feedback Thumbs */}
                           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                             <button
+                              type="button"
+                              aria-label="This response was helpful"
                               onClick={() => handleFeedback(m.id, 'up')}
                               style={{
                                 background: 'transparent',
@@ -1227,6 +1586,8 @@ export default function App() {
                               <ThumbsUp size={12} />
                             </button>
                             <button
+                              type="button"
+                              aria-label="This response was not helpful"
                               onClick={() => handleFeedback(m.id, 'down')}
                               style={{
                                 background: 'transparent',
@@ -1286,6 +1647,7 @@ export default function App() {
                     borderRadius: '12px',
                     display: 'flex',
                     alignItems: 'center',
+                    gap: '8px',
                     padding: '6px 8px 6px 16px',
                   }}
                 >
@@ -1293,7 +1655,8 @@ export default function App() {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask AURA anything about your shopping..."
+                    placeholder="Ask AURA about products, stock, orders, or returns..."
+                    aria-label="Message AURA"
                     style={{
                       flex: 1,
                       background: 'transparent',
@@ -1305,21 +1668,23 @@ export default function App() {
                   />
                   <button
                     type="submit"
-                    disabled={loading || !input.trim()}
+                    disabled={!input.trim() || loading}
+                    aria-label="Send message"
                     style={{
-                      width: '36px',
-                      height: '36px',
-                      borderRadius: '8px',
-                      backgroundColor: input.trim() ? '#34d399' : '#1e293b',
-                      border: 'none',
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      cursor: input.trim() ? 'pointer' : 'default',
-                      transition: 'background-color 0.15s ease',
+                      width: '34px',
+                      height: '34px',
+                      border: '1px solid #10b981',
+                      borderRadius: '8px',
+                      color: '#062c21',
+                      background: '#6ee7b7',
+                      cursor: !input.trim() || loading ? 'not-allowed' : 'pointer',
+                      opacity: !input.trim() || loading ? 0.5 : 1,
                     }}
                   >
-                    <Send size={16} color={input.trim() ? '#064e3b' : '#64748b'} />
+                    <ArrowRight size={16} />
                   </button>
                 </form>
 

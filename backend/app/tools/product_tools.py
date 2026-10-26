@@ -7,6 +7,7 @@ from typing import Any
 from langchain_core.tools import tool
 from sqlalchemy import and_, or_
 
+from app.data.taxonomy import product_subcategory
 from app.db.models import Product
 from app.db.session import SessionLocal
 
@@ -50,7 +51,7 @@ def search_products(
                 "id": p.id,
                 "name": p.name,
                 "category": p.category,
-                "subcategory": p.subcategory,
+                "subcategory": product_subcategory(p.name, p.subcategory),
                 "brand": p.brand,
                 "price": p.price,
                 "currency": p.currency,
@@ -77,7 +78,7 @@ def get_product(product_id: str) -> dict[str, Any]:
             "id": p.id,
             "name": p.name,
             "category": p.category,
-            "subcategory": p.subcategory,
+            "subcategory": product_subcategory(p.name, p.subcategory),
             "brand": p.brand,
             "price": p.price,
             "stock_qty": p.stock_qty,

@@ -9,6 +9,7 @@ from pathlib import Path
 
 from app.db.models import Customer, LoyaltyLedger, Order, OrderItem, PolicyDoc, Product
 from app.db.session import SessionLocal, init_db
+from app.data.taxonomy import product_subcategory
 
 DATA_DIR = Path(__file__).resolve().parent
 SEED_PRODUCTS_FILE = DATA_DIR / "seed_products.json"
@@ -51,7 +52,7 @@ CATEGORIES_DATA = {
         ],
     },
     "Computer Peripherals": {
-        "subcategories": ["Keyboards", "Mice", "Headsets", "Monitors"],
+        "subcategories": ["Keyboards", "Keyboards & Mice", "Mice", "Headsets", "Monitors"],
         "brands": ["Logitech", "Razer", "Redragon", "Cosmic Byte", "HP", "Dell", "Zebronics"],
         "items": [
             ("RGB Mechanical Gaming Keyboard", "Tactile blue/red switches mechanical keyboard with customizable RGB backlighting.", 1899, 3499),
@@ -103,7 +104,10 @@ def generate_products() -> list[dict]:
                 if price < min_p:
                     price = min_p
 
-                subcat = random.choice(cat_data["subcategories"])
+                subcat = product_subcategory(
+                    base_name,
+                    random.choice(cat_data["subcategories"]),
+                )
                 full_name = f"{brand} {base_name}"
                 description = f"{desc_tmpl} Premium quality design by {brand}."
                 tags = [category.lower(), subcat.lower(), brand.lower(), "bestseller" if random.random() > 0.6 else "featured"]
@@ -273,6 +277,11 @@ def seed_database() -> None:
             existing_p = db.query(Product).filter(Product.id == p["id"]).first()
             if not existing_p:
                 db.add(Product(**p))
+            else:
+                existing_p.subcategory = product_subcategory(
+                    existing_p.name,
+                    existing_p.subcategory,
+                )
         db.commit()
 
         # 3. Customers

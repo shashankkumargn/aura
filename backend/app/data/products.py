@@ -1,4 +1,4 @@
-```python
+
 PRODUCTS = [
     {
         "id": 1,
@@ -57,4 +57,4 @@ PRODUCTS = [
         "stock": 4,
     },
 ]
-```
+

@@ -7,6 +7,7 @@ import re
 from typing import Any
 from langchain_core.tools import tool
 
+from app.data.taxonomy import product_subcategory
 from app.db.models import Customer, Order, OrderItem, Product
 from app.db.session import SessionLocal
 
@@ -15,9 +16,86 @@ def _tokenize(text: str) -> list[str]:
     return re.findall(r"\b[a-zA-Z0-9]+\b", text.lower())
 
 
+def infer_product_category(text: str) -> str | None:
+    """Infer a catalog category from common product words in a request."""
+    normalized = " ".join(_tokenize(text))
+    aliases = {
+        "Footwear": ("footwear", "shoes", "shoe", "sneakers", "sneaker", "trainers", "trainer"),
+        "Audio": ("earphones", "earphone", "headphones", "headphone", "earbuds", "speaker", "audio"),
+        "Wearables": ("smartwatch", "smartwatches", "smart band", "fitness tracker", "wearables"),
+        "Computer Peripherals": (
+            "keyboard",
+            "keyboards",
+            "mouse",
+            "mice",
+            "monitor",
+            "headset",
+            "computer peripherals",
+        ),
+        "Bags & Luggage": ("backpack", "backpacks", "briefcase", "duffel", "luggage", "bags"),
+        "Apparel": ("clothing", "apparel", "t shirt", "hoodie", "jacket", "track pants"),
+        "Home & Kitchen": (
+            "home and kitchen",
+            "kitchen",
+            "kettle",
+            "air fryer",
+            "water bottle",
+            "coffee maker",
+        ),
+    }
+
+    for category, terms in aliases.items():
+        for term in terms:
+            if re.search(rf"\b{re.escape(term)}\b", normalized):
+                return category
+    return None
+
+
+def infer_product_subcategory(text: str) -> str | None:
+    """Infer a specific catalog subcategory from common product terms."""
+    normalized = " ".join(_tokenize(text))
+    aliases = {
+        "Running Shoes": ("running shoes", "running shoe", "runners"),
+        "Walking Shoes": ("walking shoes", "walking shoe"),
+        "Training Shoes": ("training shoes", "training shoe", "trainers", "trainer"),
+        "Sneakers": ("sneakers", "sneaker"),
+        "Headphones": ("headphones", "headphone", "over ear"),
+        "Earphones": ("earphones", "earphone", "earbuds", "earbud", "neckband"),
+        "Bluetooth Speakers": ("bluetooth speakers", "bluetooth speaker", "speakers", "speaker"),
+        "Soundbars": ("soundbars", "soundbar"),
+        "Smartwatches": ("smartwatches", "smartwatch"),
+        "Smart Bands": ("fitness trackers", "fitness tracker", "smart bands", "smart band"),
+        "Keyboards & Mice": ("keyboard and mouse combo", "keyboard mouse combo", "keyboard mouse"),
+        "Keyboards": ("keyboards", "keyboard"),
+        "Mice": ("mice", "mouse"),
+        "Headsets": ("gaming headset", "gaming headsets", "headset", "headsets"),
+        "Monitors": ("monitors", "monitor"),
+        "Backpacks": ("backpacks", "backpack"),
+        "Laptop Bags": ("briefcases", "briefcase", "laptop bags", "laptop bag"),
+        "Duffel Bags": ("duffel bags", "duffel bag", "duffels"),
+        "T-Shirts": ("t shirts", "t shirt", "tshirts", "tshirt"),
+        "Track Pants": ("track pants",),
+        "Hoodies": ("hoodies", "hoodie"),
+        "Bottles": ("water bottles", "water bottle"),
+        "Kettles": ("kettles", "kettle"),
+        "Air Fryers": ("air fryers", "air fryer"),
+    }
+
+    for subcategory, terms in aliases.items():
+        for term in terms:
+            if re.search(rf"\b{re.escape(term)}\b", normalized):
+                return subcategory
+    return None
+
+
 @tool
-def get_recommendations(user_id: str, k: int = 5) -> list[dict[str, Any]]:
-    """Generate personalized product recommendations for a customer using hybrid collaborative and content filtering; returns list[dict(product_id, name, category, price, why, score)]."""
+def get_recommendations(
+    user_id: str,
+    k: int = 5,
+    category: str | None = None,
+    subcategory: str | None = None,
+) -> list[dict[str, Any]]:
+    """Generate personalized recommendations; optionally restrict results to a catalog category or specific subcategory."""
     clean_uid = (user_id or "u123").strip()
     db = SessionLocal()
     try:
@@ -28,6 +106,16 @@ def get_recommendations(user_id: str, k: int = 5) -> list[dict[str, Any]]:
         purchased_pids = set(item.product_id for item in past_items)
 
         all_products = db.query(Product).all()
+        requested_category = infer_product_category(category or "")
+        requested_subcategory = infer_product_subcategory(subcategory or category or "")
+        if requested_category:
+            all_products = [p for p in all_products if p.category == requested_category]
+        if requested_subcategory:
+            all_products = [
+                p
+                for p in all_products
+                if product_subcategory(p.name, p.subcategory) == requested_subcategory
+            ]
         if not all_products:
             return []
 
@@ -39,7 +127,11 @@ def get_recommendations(user_id: str, k: int = 5) -> list[dict[str, Any]]:
                     "product_id": p.id,
                     "name": p.name,
                     "category": p.category,
+                    "subcategory": product_subcategory(p.name, p.subcategory),
+                    "brand": p.brand,
                     "price": p.price,
+                    "rating_avg": p.rating_avg,
+                    "description": p.description,
                     "why": f"Trending top-rated item in {p.category} ({p.rating_avg}★)",
                     "score": round(p.rating_avg or 4.0, 2),
                 }
@@ -94,7 +186,11 @@ def get_recommendations(user_id: str, k: int = 5) -> list[dict[str, Any]]:
                 "product_id": p.id,
                 "name": p.name,
                 "category": p.category,
+                "subcategory": product_subcategory(p.name, p.subcategory),
+                "brand": p.brand,
                 "price": p.price,
+                "rating_avg": p.rating_avg,
+                "description": p.description,
                 "why": why,
                 "score": round(total_score, 2),
             })

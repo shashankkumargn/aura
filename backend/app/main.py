@@ -23,6 +23,7 @@ from app.evaluation.metrics import (
 from app.graph import graph
 from app.memory.short_term import append_turn, get_history
 from app.state import AuraState
+from app.tools.web_search import amazon_product_search
 
 PIPELINE_AGENT_IDS = {
     "coordinator",
@@ -98,11 +99,18 @@ class ChatRequest(BaseModel):
     message: str
 
 
+class AmazonSearchRequest(BaseModel):
+    query: str = Field(min_length=1, max_length=200)
+    amazon_domain: str = Field(default="amazon.in", max_length=40)
+    max_results: int = Field(default=5, ge=1, le=5)
+
+
 class ChatResponse(BaseModel):
     response: str
     intent: str | None = None
     agents_used: list[str] = Field(default_factory=list)
     retrieved_sources: list[str] = Field(default_factory=list)
+    amazon_products: list[dict[str, Any]] = Field(default_factory=list)
 
 
 class FeedbackRequest(BaseModel):
@@ -151,6 +159,9 @@ def chat_endpoint(payload: ChatRequest, db: Session = Depends(get_db)) -> ChatRe
     agents_used = _resolve_agents_used(final_state)
 
     retrieved_sources = final_state.get("retrieved_context") or []
+    agent_outputs = final_state.get("agent_outputs") or {}
+    sales_output = agent_outputs.get("sales") or {}
+    amazon_products = sales_output.get("amazon_products", []) if isinstance(sales_output, dict) else []
 
     # 2. Update short-term session memory
     append_turn(payload.session_id, "user", payload.message)
@@ -175,7 +186,30 @@ def chat_endpoint(payload: ChatRequest, db: Session = Depends(get_db)) -> ChatRe
         intent=intent,
         agents_used=agents_used,
         retrieved_sources=retrieved_sources,
+        amazon_products=amazon_products,
     )
+
+
+@app.post("/amazon-search")
+def amazon_search_endpoint(payload: AmazonSearchRequest) -> dict[str, Any]:
+    """Search Amazon directly for product cards without requiring an LLM round trip."""
+    try:
+        products = amazon_product_search.invoke(
+            {
+                "query": payload.query,
+                "amazon_domain": payload.amazon_domain,
+                "max_results": payload.max_results,
+            }
+        )
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+    except RuntimeError as exc:
+        raise HTTPException(status_code=502, detail=str(exc)) from exc
+    return {
+        "query": payload.query,
+        "amazon_domain": payload.amazon_domain,
+        "products": products,
+    }
 
 
 @app.get("/admin/orders")

@@ -68,7 +68,7 @@ flowchart TD
 - **LLM Integrations:** Provider-agnostic via `app/llm.py` (`Groq`, `OpenAI`, `Anthropic`).
 - **Database & Persistence:** SQLite + SQLAlchemy ORM (`aura.db`).
 - **Vector Retrieval & RAG:** In-memory TF-IDF vector search and cosine similarity over store policies (`policies.json`).
-- **Machine Learning Recommendations:** Scikit-learn (TF-IDF item-content similarity + collaborative filtering order co-occurrence pass).
+- **Machine Learning Recommendations:** TF-IDF item-content similarity and collaborative order co-occurrence, filtered to the requested catalog category/subcategory. Product types use canonical seed taxonomy; “best” comparisons rank by catalog rating, using price to break ties.
 - **Frontend:** React 18, Vite, Lucide React icons.
 - **Analytics & Explainability Dashboard:** Streamlit, Matplotlib, Pandas.
 - **Packaging & Deployment:** Docker, Docker Compose.
@@ -150,6 +150,44 @@ LLM_PROVIDER=groq
 GROQ_API_KEY=gsk_your_groq_api_key_here
 MODEL_NAME=llama-3.3-70b-versatile
 ```
+
+Optional public web search can use either Tavily or SerpAPI. Add the key(s) to
+`backend/.env`; do not commit this file:
+```env
+TAVILY_API_KEY=your_tavily_api_key
+SERPAPI_KEY=your_serpapi_api_key
+WEB_SEARCH_PROVIDER=auto
+```
+With `auto`, AURA prefers Tavily when both keys are set; choose `tavily` or
+`serpapi` to select one explicitly. The Sales agent uses web search for current
+public information, comparisons, and trends. AURA's local catalog remains the
+source of truth for its own product prices, stock, and availability. Restart
+the backend (or recreate its container) after changing environment variables.
+
+For Amazon product cards, make sure `SERPAPI_KEY` or `SERPAPI_API_KEY` is set in
+`backend/.env`. Then search normally in the Agent playground (for example,
+“Find iPhone 18”). AURA searches its own catalog and Amazon India in the same
+request; the Amazon lookup runs automatically when the SerpAPI key is
+configured. Without the key, catalog search continues as usual. AURA shows up
+to three Amazon listings tied to the catalog recommendations it actually
+named, with available images, prices, ratings, delivery details, and variants.
+Listings are searched by the recommended brand and product type, then filtered
+to keep unrelated brands and categories out; Amazon titles do not have to
+repeat every catalog adjective to be included. Phone and laptop searches filter out other
+product categories and accessories. Phone model searches can also include
+smartphone alternatives from recognized competing brands. For iPhone searches,
+the requested iPhone generation is matched explicitly, so a chip name such as
+A18 in an iPhone 16 listing cannot make it appear as an iPhone 18 result. If no
+exact model is listed, AURA labels the results as competing phones instead of
+presenting an older iPhone as a match. The selected marketplace
+controls both Amazon's search domain and displayed currency (India: ₹, US: $,
+UK: £). Searches for a specific phone model only include requested-model
+matches, then look for competitors using a model-specific alternatives query;
+older models and unrelated phone listings are excluded from the requested
+product results. Amazon search and product-detail requests are made by the
+backend; SerpAPI may count each lookup against your plan. You can still ask
+AURA to search the public web for recommendations; a short
+confirmation such as “yes” continues that search using the earlier request.
 
 ### 2. Run with Docker Compose (Recommended)
 Launch all three services simultaneously:

@@ -6,6 +6,7 @@ Allowed tools: none.
 
 from __future__ import annotations
 
+import re
 from typing import Any, Literal
 from langchain_core.messages import HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
@@ -88,11 +89,71 @@ def _latest_user_text(state: AuraState) -> str:
     return ""
 
 
+def _previous_message_text(state: AuraState, role_names: tuple[str, ...]) -> str:
+    messages = state.get("messages") or []
+    latest_user_index = next(
+        (
+            index
+            for index in range(len(messages) - 1, -1, -1)
+            if (
+                isinstance(messages[index], dict)
+                and messages[index].get("role") in ("user", "human")
+            )
+            or (
+                not isinstance(messages[index], dict)
+                and (
+                    getattr(messages[index], "role", None)
+                    or getattr(messages[index], "type", None)
+                )
+                in ("user", "human")
+            )
+        ),
+        len(messages),
+    )
+    for message in reversed(messages[:latest_user_index]):
+        if isinstance(message, dict):
+            role = message.get("role")
+            content = message.get("content")
+        else:
+            role = getattr(message, "role", None) or getattr(message, "type", None)
+            content = getattr(message, "content", None)
+        if role in role_names and content:
+            return str(content)
+    return ""
+
+
+def _accepted_web_search_offer(state: AuraState, text: str) -> bool:
+    affirmative = re.fullmatch(
+        r"\s*(?:yes|yeah|yep|sure|please|okay|ok|go ahead|do it|that would be great)[.! ]*\s*",
+        text,
+        re.IGNORECASE,
+    )
+    if not affirmative:
+        return False
+    previous_assistant = _previous_message_text(state, ("assistant", "ai"))
+    return bool(
+        re.search(r"\b(?:search|look up|fetch|find)\b", previous_assistant, re.IGNORECASE)
+        and re.search(r"\b(?:would you like|let me know|shall i|can i)\b", previous_assistant, re.IGNORECASE)
+    )
+
+
 def coordinator_node(state: AuraState) -> dict[str, Any]:
     """LangGraph node: classify latest message and store intent in state."""
     text = _latest_user_text(state)
     if not text:
         return {"intent": "general_faq"}
+
+    if _accepted_web_search_offer(state, text):
+        previous_request = _previous_message_text(state, ("user", "human"))
+        return {
+            "intent": "recommendation",
+            "plan": [
+                {
+                    "agent": "recommendation",
+                    "instruction": f"Search online for current recommendations based on: {previous_request}",
+                }
+            ],
+        }
 
     res = coordinate(text)
     return {
